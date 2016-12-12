@@ -35,6 +35,20 @@ function init() {
           currentColor = color.toHexString();
         }
     });
+
+    $('#btn-download').click(function () {
+        var dataURL = canvas.toDataURL('image/png');
+        downloadURI(dataURL, 'Drawing.png');
+    });
+
+}
+
+function downloadURI(uri, name)
+{
+    var link = document.createElement("a");
+    link.download = name;
+    link.href = uri;
+    link.click();
 }
 
 function drawDot() {
@@ -43,8 +57,6 @@ function drawDot() {
   ctx.fillRect(currX, currY, 1, 1);
   ctx.fillRect(currX, h-currY, 1, 1);
   ctx.closePath();
-
-
 }
 
 function drawLine() {
@@ -72,7 +84,6 @@ function drawLine() {
     a_ = w/2-h/2+b; b_ = h/2-w/2+a; c_ = w/2-h/2+d; d_ = h/2-w/2+c;
     ctx.moveTo(a_, b_);
     ctx.lineTo(c_, d_);
-
 
     ctx.strokeStyle = currentColor;
     ctx.lineWidth = lineWidth;
