@@ -54,12 +54,51 @@ function drawLine() {
     ctx.lineTo(c, d);
     ctx.moveTo(a_, b_);
     ctx.lineTo(c_, d_);
+    a_ = w-a; b_ = b; c_ = w-c; d_ = d;
+    ctx.moveTo(a_, b_);
+    ctx.lineTo(c_, d_);
+    a_ = w-a; b_ = h-b; c_ = w-c; d_ = h-d;
+    ctx.moveTo(a_, b_);
+    ctx.lineTo(c_, d_);
+    a_ = w/2+h/2-b; b_ = w/2+h/2-a; c_ = w/2+h/2-d; d_ = w/2+h/2-c;
+    ctx.moveTo(a_, b_);
+    ctx.lineTo(c_, d_);
+    a_ = w/2+h/2-b; b_ = h/2-w/2+a; c_ = w/2+h/2-d; d_ = h/2-w/2+c;
+    ctx.moveTo(a_, b_);
+    ctx.lineTo(c_, d_);
+    a_ = w/2-h/2+b; b_ = w/2+h/2-a; c_ = w/2-h/2+d; d_ = w/2+h/2-c;
+    ctx.moveTo(a_, b_);
+    ctx.lineTo(c_, d_);
+    a_ = w/2-h/2+b; b_ = h/2-w/2+a; c_ = w/2-h/2+d; d_ = h/2-w/2+c;
+    ctx.moveTo(a_, b_);
+    ctx.lineTo(c_, d_);
+
+
     ctx.strokeStyle = currentColor;
     ctx.lineWidth = lineWidth;
     ctx.lineCap = 'round';
     ctx.stroke();
     ctx.closePath();
+}
 
+function reflectTwice() {
+    var a = prevX, a_ = a, b = prevY, b_ = h-b, c = currX, c_ = c, d = currY, d_ = h-d;
+    ctx.beginPath();
+    ctx.moveTo(a, b);
+    ctx.lineTo(c, d);
+    ctx.moveTo(a_, b_);
+    ctx.lineTo(c_, d_);
+    a_ = w-a; b_ = b; c_ = w-c; d_ = d;
+    ctx.moveTo(a_, b_);
+    ctx.lineTo(c_, d_);
+    a_ = w-a; b_ = h-b; c_ = w-c; d_ = h-d;
+    ctx.moveTo(a_, b_);
+    ctx.lineTo(c_, d_);
+    ctx.strokeStyle = currentColor;
+    ctx.lineWidth = lineWidth;
+    ctx.lineCap = 'round';
+    ctx.stroke();
+    ctx.closePath();
 }
 
 function erase() {
