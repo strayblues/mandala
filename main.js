@@ -37,16 +37,29 @@ function init() {
     });
 }
 
+function drawDot() {
+  ctx.beginPath();
+  ctx.fillStyle = currentColor;
+  ctx.fillRect(currX, currY, 1, 1);
+  ctx.fillRect(currX, h-currY, 1, 1);
+  ctx.closePath();
 
-function draw() {
+
+}
+
+function drawLine() {
+    var a = prevX, a_ = a, b = prevY, b_ = h-b, c = currX, c_ = c, d = currY, d_ = h-d;
     ctx.beginPath();
-    ctx.moveTo(prevX, prevY);
-    ctx.lineTo(currX, currY);
+    ctx.moveTo(a, b);
+    ctx.lineTo(c, d);
+    ctx.moveTo(a_, b_);
+    ctx.lineTo(c_, d_);
     ctx.strokeStyle = currentColor;
     ctx.lineWidth = lineWidth;
     ctx.lineCap = 'round';
     ctx.stroke();
     ctx.closePath();
+
 }
 
 function erase() {
@@ -71,11 +84,8 @@ function handleMouseDown(e) {
   flag = true;
   dot_flag = true;
   if (dot_flag) {
-      ctx.beginPath();
-      ctx.fillStyle = currentColor;
-      ctx.fillRect(currX, currY, 1, 1);
-      ctx.closePath();
-      dot_flag = false;
+    drawDot();
+    dot_flag = false;
   }
 }
 
@@ -89,6 +99,6 @@ function onMouseMove(e) {
       prevY = currY;
       currX = e.clientX - canvas.offsetLeft;
       currY = e.clientY - canvas.offsetTop;
-      draw();
+      drawLine();
   }
 }
