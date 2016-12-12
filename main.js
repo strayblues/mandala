@@ -30,11 +30,16 @@ function init() {
     });
 
     $("#custom").spectrum({
+        showButtons: false,
         color: currentColor,
         change: function(color){
           currentColor = color.toHexString();
+        },
+        move: function(color){
+          currentColor = color.toHexString();
         }
     });
+
 
     $('#btn-download').click(function () {
         var dataURL = canvas.toDataURL('image/png');
