@@ -13,6 +13,8 @@ var lineWidth = 2;
 function init() {
     canvas = document.getElementById('myMandala');
     ctx = canvas.getContext("2d");
+    canvas.height = window.innerHeight-30;
+    canvas.width = window.innerHeight-30;
     w = canvas.width;
     h = canvas.height;
 

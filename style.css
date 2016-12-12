@@ -4,19 +4,6 @@ body {
   background-color: #e8aecd;
 }
 
-@media (min-height: 700px) {
-    body {
-        background-color: lightblue;
-    }
-    #myMandala {
-      height: 100%;
-    }
-}
-
-#main, #canvas-container, html, body {
-  height: 100%;
-}
-
 #myMandala {
   background-color: white;
   display: inline;
