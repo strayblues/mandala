@@ -113,7 +113,7 @@ function reflectTwice() {
 }
 
 function erase() {
-    var m = confirm("Want to clear everything?");
+    var m = confirm("Wanna clear everything?");
     if (m) {
         ctx.clearRect(0, 0, w, h);
     }
