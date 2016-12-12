@@ -17,18 +17,18 @@ function init() {
     w = canvas.width;
     h = canvas.height;
 
-    canvas.addEventListener("mousemove", function (e) {
+    $('canvas').on('mousemove', function (e) {
         findxy('move', e)
-    }, false);
-    canvas.addEventListener("mousedown", function (e) {
+    });
+    $('canvas').on('mousedown', function (e) {
         findxy('down', e)
-    }, false);
-    canvas.addEventListener("mouseup", function (e) {
+    });
+    $('canvas').on('mouseup', function (e) {
         findxy('up', e)
-    }, false);
-    canvas.addEventListener("mouseout", function (e) {
+    });
+    $('canvas').on('mouseout', function (e) {
         findxy('out', e)
-    }, false);
+    });
 
     $("#custom").spectrum({
         color: currentColor,
@@ -38,35 +38,6 @@ function init() {
     });
 }
 
-
-function color(obj) {
-    switch (obj.id) {
-        case "green":
-            x = "green";
-            break;
-        case "blue":
-            x = "blue";
-            break;
-        case "red":
-            x = "red";
-            break;
-        case "yellow":
-            x = "yellow";
-            break;
-        case "orange":
-            x = "orange";
-            break;
-        case "black":
-            x = "black";
-            break;
-        case "white":
-            x = "white";
-            break;
-    }
-    if (x == "white") y = 14;
-    else y = 2;
-
-}
 
 function draw() {
     ctx.beginPath();
@@ -79,22 +50,20 @@ function draw() {
 }
 
 function erase() {
-    var m = confirm("Want to clear?");
+    var m = confirm("Want to clear everything?");
     if (m) {
         ctx.clearRect(0, 0, w, h);
-        document.getElementById("canvasimg").style.display = "none";
     }
 }
 
+// TODO Add an eraser 
+
 function save() {
-    document.getElementById("canvasimg").style.border = "2px solid";
-    var dataURL = canvas.toDataURL();
-    document.getElementById("canvasimg").src = dataURL;
-    document.getElementById("canvasimg").style.display = "inline";
+// TODO Recored session + print to png/JPEG/whatever + save to user account?
 }
 
-function findxy(res, e) {
-    if (res == 'down') {
+function findxy(CurrentEvent, e) {
+    if (CurrentEvent == 'down') {
         prevX = currX;
         prevY = currY;
         currX = e.clientX - canvas.offsetLeft;
@@ -110,10 +79,10 @@ function findxy(res, e) {
             dot_flag = false;
         }
     }
-    if (res == 'up' || res == "out") {
+    if (CurrentEvent == 'up' || CurrentEvent == "out") {
         flag = false;
     }
-    if (res == 'move') {
+    if (CurrentEvent == 'move') {
         if (flag) {
             prevX = currX;
             prevY = currY;
