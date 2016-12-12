@@ -7,8 +7,7 @@ var canvas, ctx, flag = false,
 
 var currentColor = "hotpink";
 
-var x = currentColor,
-    y = 2;
+var lineWidth = 2;
 
 
 function init() {
@@ -44,7 +43,8 @@ function draw() {
     ctx.moveTo(prevX, prevY);
     ctx.lineTo(currX, currY);
     ctx.strokeStyle = currentColor;
-    ctx.lineWidth = y;
+    ctx.lineWidth = lineWidth;
+    ctx.lineCap = 'round';
     ctx.stroke();
     ctx.closePath();
 }
@@ -73,7 +73,7 @@ function handleMouseDown(e) {
   if (dot_flag) {
       ctx.beginPath();
       ctx.fillStyle = currentColor;
-      ctx.fillRect(currX, currY, 2, 2);
+      ctx.fillRect(currX, currY, 1, 1);
       ctx.closePath();
       dot_flag = false;
   }
