@@ -18,16 +18,16 @@ function init() {
     h = canvas.height;
 
     $('canvas').on('mousemove', function (e) {
-        findxy('move', e)
+        onMouseMove(e)
     });
     $('canvas').on('mousedown', function (e) {
-        findxy('down', e)
+        handleMouseDown(e)
     });
     $('canvas').on('mouseup', function (e) {
-        findxy('up', e)
+        stopDrawing()
     });
     $('canvas').on('mouseout', function (e) {
-        findxy('out', e)
+        stopDrawing()
     });
 
     $("#custom").spectrum({
@@ -56,39 +56,39 @@ function erase() {
     }
 }
 
-// TODO Add an eraser 
+// TODO Add an eraser
 
 function save() {
 // TODO Recored session + print to png/JPEG/whatever + save to user account?
 }
 
-function findxy(CurrentEvent, e) {
-    if (CurrentEvent == 'down') {
-        prevX = currX;
-        prevY = currY;
-        currX = e.clientX - canvas.offsetLeft;
-        currY = e.clientY - canvas.offsetTop;
+function handleMouseDown(e) {
+  prevX = currX;
+  prevY = currY;
+  currX = e.clientX - canvas.offsetLeft;
+  currY = e.clientY - canvas.offsetTop;
 
-        flag = true;
-        dot_flag = true;
-        if (dot_flag) {
-            ctx.beginPath();
-            ctx.fillStyle = currentColor;
-            ctx.fillRect(currX, currY, 2, 2);
-            ctx.closePath();
-            dot_flag = false;
-        }
-    }
-    if (CurrentEvent == 'up' || CurrentEvent == "out") {
-        flag = false;
-    }
-    if (CurrentEvent == 'move') {
-        if (flag) {
-            prevX = currX;
-            prevY = currY;
-            currX = e.clientX - canvas.offsetLeft;
-            currY = e.clientY - canvas.offsetTop;
-            draw();
-        }
-    }
+  flag = true;
+  dot_flag = true;
+  if (dot_flag) {
+      ctx.beginPath();
+      ctx.fillStyle = currentColor;
+      ctx.fillRect(currX, currY, 2, 2);
+      ctx.closePath();
+      dot_flag = false;
+  }
+}
+
+function stopDrawing() {
+  flag = false;
+}
+
+function onMouseMove(e) {
+  if (flag) {
+      prevX = currX;
+      prevY = currY;
+      currX = e.clientX - canvas.offsetLeft;
+      currY = e.clientY - canvas.offsetTop;
+      draw();
+  }
 }
