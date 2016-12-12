@@ -1,11 +1,19 @@
+@media (max-height: 300px) {
+    body {
+        background-color: lightblue;
+    }
+}
+
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: 'Varela Round', sans-serif;
   background-color: #e8aecd;
 }
 
 #canvas-container {
-  width: 70%;
-  text-align:center;
 }
 
 #myMandala {
@@ -16,13 +24,12 @@ body {
 /* The side navigation menu */
 .sidenav {
     height: 100%; /* 100% Full-height */
-    width: 20%; /* 0 width - change this with JavaScript */
+    width: 8rem; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
     top: 0;
     left: 0;
     background-color: #111;
-    overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 4rem; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
@@ -43,7 +50,7 @@ body {
 
 #main {
     transition: margin-left .5s;
-    padding-left: 25%;
+    padding-left: 8rem;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
