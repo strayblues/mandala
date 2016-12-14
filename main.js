@@ -1,3 +1,7 @@
+/**
+* @author Hagar Shilo <strayblues@gmail.com>
+*/
+
 var canvas, ctx, flag = false,
     prevX = 0,
     currX = 0,
