@@ -35,9 +35,14 @@ function init() {
         stopDrawing()
     });
 
-    $("#custom").spectrum({
-        showButtons: false,
+
+    //selectionPalette
+    $("#selectionPalette").spectrum({
+        showPalette: true,
         color: currentColor,
+        palette: [ ],
+        showSelectionPalette: true, // true by default
+        selectionPalette: ["red", "green", "blue"],
         change: function(color){
           currentColor = color.toHexString();
         },
@@ -46,6 +51,12 @@ function init() {
         }
     });
 
+    /*
+        // TODO Hide spectrum onblur or focusout
+        $("#custom").focusout(function () {
+          $("#custom").spectrum("hide");
+        });
+    */
 
     $('#btn-download').click(function () {
         var dataURL = canvas.toDataURL('image/png');
