@@ -42,7 +42,7 @@ function init() {
         color: currentColor,
         palette: [ ],
         showSelectionPalette: true, // true by default
-        selectionPalette: ["red", "green", "blue"],
+        selectionPalette: [ ],
         change: function(color){
           currentColor = color.toHexString();
         },
