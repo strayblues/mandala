@@ -83,12 +83,18 @@ function downloadURI(uri, name) {
 }
 
 function drawDot() {
+  var pointSize = 10;
   ctx.beginPath();
   ctx.fillStyle = currentColor;
-  ctx.fillRect(currX, currY, 20, 20);
-  ctx.fillRect(currX, h-currY, 20, 20);
-  ctx.fillRect(w-currX, currY, 20, 20);
-  ctx.fillRect(w-currX, h-currY, 20, 20);
+  ctx.fillRect(currX, currY, pointSize, pointSize);
+  ctx.fillRect(currX, h-currY-pointSize, pointSize, pointSize);
+  ctx.fillRect(w-currX-pointSize, currY, pointSize, pointSize);
+  ctx.fillRect(w-currX-pointSize, h-currY-pointSize, pointSize, pointSize);
+
+  ctx.fillRect(w/2+h/2-currY-pointSize, w/2+h/2-currX-pointSize, pointSize, pointSize);
+  ctx.fillRect(w/2+h/2-currY-pointSize, h/2-w/2+currX, pointSize, pointSize);
+  ctx.fillRect(w/2-h/2+currY, w/2+h/2-currX-pointSize, pointSize, pointSize);
+  ctx.fillRect(w/2-h/2+currY, h/2-w/2+currX, pointSize, pointSize);
 
   ctx.closePath();
 }
