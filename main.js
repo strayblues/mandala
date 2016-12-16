@@ -85,8 +85,11 @@ function downloadURI(uri, name) {
 function drawDot() {
   ctx.beginPath();
   ctx.fillStyle = currentColor;
-  ctx.fillRect(currX, currY, 1, 1);
-  ctx.fillRect(currX, h-currY, 1, 1);
+  ctx.fillRect(currX, currY, 20, 20);
+  ctx.fillRect(currX, h-currY, 20, 20);
+  ctx.fillRect(w-currX, currY, 20, 20);
+  ctx.fillRect(w-currX, h-currY, 20, 20);
+
   ctx.closePath();
 }
 
