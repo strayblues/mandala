@@ -13,7 +13,7 @@ body {
 /* The side navigation menu */
 .sidenav {
     height: 100%; /* 100% Full-height */
-    width: 8rem; /* 0 width - change this with JavaScript */
+    width: 10rem; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
     top: 0;
@@ -27,7 +27,7 @@ body {
 .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
-    font-size: 160%;
+    font-size: 130%;
     color: #818181;
     display: block;
     transition: 0.3s
@@ -39,9 +39,13 @@ body {
 
 #main {
     transition: margin-left .5s;
-    padding-left: 8rem;
+    padding-left: 10rem;
 }
 
 .color-picker {
   padding-left: 2rem;
+}
+
+#btn-clear {
+  margin-top: 2rem;
 }

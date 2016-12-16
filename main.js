@@ -2,6 +2,9 @@
 * @author Hagar Shilo <strayblues@gmail.com>
 */
 
+
+$(function(){
+
 var canvas, ctx, flag = false,
     prevX = 0,
     currX = 0,
@@ -63,7 +66,11 @@ function init() {
         downloadURI(dataURL, 'Drawing.png');
     });
 
+    $('#btn-clear').click(clear);
+
 }
+
+init();
 
 function downloadURI(uri, name) {
   var link = document.createElement("a");
@@ -136,14 +143,12 @@ function reflectTwice() {
     ctx.closePath();
 }
 
-function erase() {
+function clear() {
     var m = confirm("Wanna clear everything?");
     if (m) {
         ctx.clearRect(0, 0, w, h);
     }
 }
-
-// TODO Add an eraser
 
 function save() {
 // TODO Recored session + print to png/JPEG/whatever + save to user account?
@@ -176,3 +181,5 @@ function onMouseMove(e) {
       drawLine();
   }
 }
+
+});
