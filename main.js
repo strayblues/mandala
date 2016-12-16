@@ -43,6 +43,7 @@ function init() {
     $("#selectionPalette").spectrum({
         showPalette: true,
         color: currentColor,
+        chooseText: "Save color",
         palette: [ ],
         showSelectionPalette: true, // true by default
         selectionPalette: [ ],
@@ -54,12 +55,11 @@ function init() {
         }
     });
 
-    /*
-        // TODO Hide spectrum onblur or focusout
-        $("#custom").focusout(function () {
-          $("#custom").spectrum("hide");
-        });
-    */
+
+    // Hide spectrum when mouse leaves the selection palette
+    $(".sp-container").mouseleave(function () {
+      $("#selectionPalette").spectrum("hide");
+    });
 
     $('#btn-download').click(function () {
         var dataURL = canvas.toDataURL('image/png');
