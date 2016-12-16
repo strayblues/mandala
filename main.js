@@ -83,7 +83,7 @@ function downloadURI(uri, name) {
 }
 
 function drawDot() {
-  var pointSize = 10;
+  var pointSize = 1;
   ctx.beginPath();
   ctx.fillStyle = currentColor;
   ctx.fillRect(currX, currY, pointSize, pointSize);
