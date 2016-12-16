@@ -62,8 +62,10 @@ function init() {
     });
 
     $('#btn-download').click(function () {
-        var dataURL = canvas.toDataURL('image/png');
-        downloadURI(dataURL, 'Drawing.png');
+
+      document.getElementById("myMandala").toBlob(function(blob) {
+        saveAs(blob, 'Drawing.png');
+      });
     });
 
     $('#btn-clear').click(clear);
