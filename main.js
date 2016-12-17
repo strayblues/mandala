@@ -64,7 +64,7 @@ function init() {
     $('#btn-download').click(function () {
 
       document.getElementById("myMandala").toBlob(function(blob) {
-        saveAs(blob, 'Drawing.png');
+        saveAs(blob, 'Mandala.png');
       });
     });
 
