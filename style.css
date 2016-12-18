@@ -46,6 +46,6 @@ body {
   padding-left: 2rem;
 }
 
-#btn-clear {
-  margin-top: 2rem;
+#btn-clear, #btn-download, #set-line-width {
+  margin-top: 1.5rem;
 }

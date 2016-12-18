@@ -74,6 +74,11 @@ function init() {
 
 init();
 
+// Let user set the width of the line
+$(":input").bind('keyup mouseup', function () {
+  lineWidth = document.getElementById("line-width").value;
+});
+
 function downloadURI(uri, name) {
   var link = document.createElement("a");
   link.download = name;

@@ -22,15 +22,19 @@
   <script src="main.js"></script>
   <script src="FileSaver.js"></script>
   <script src="canvas-to-blob.min.js"></script>
-
 </head>
 <body>
   <div id="mySidenav" class="sidenav">
+    <a id="btn-color">Color</a>
     <div class="color-picker">
       <input type='text' id="selectionPalette" />
     </div>
-    <a id="btn-clear">Clear</a>
+    <div id="set-line-width">
+    <a>Line width <input type="number" id="line-width" value="2"></a>
+
+    </div>
     <a id="btn-download">Download</a>
+    <a id="btn-clear">Clear</a>
   </div>
 
   <!-- Push page content to the right of the sidenav-->
