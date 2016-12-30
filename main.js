@@ -101,7 +101,7 @@ function downloadURI(uri, name) {
 }
 
 function drawDot() {
-  var pointSize = 1; //TODO Make adjustable AND round
+  var pointSize = 2; //TODO Make adjustable AND round
   ctx.beginPath();
   ctx.fillStyle = currentColor;
   ctx.fillRect(currX, currY, pointSize, pointSize);
