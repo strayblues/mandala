@@ -49,7 +49,6 @@ function init() {
         stopDrawing()
     });
 
-
     //selectionPalette
     $("#selectionPalette").spectrum({
         showPalette: true,
@@ -175,10 +174,6 @@ function clear() {
     if (m) {
         ctx.clearRect(0, 0, w, h);
     }
-}
-
-function save() {
-// TODO Recored session + print to png/JPEG/whatever + save to user account?
 }
 
 function handleMouseDown(e) {
