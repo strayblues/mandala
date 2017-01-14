@@ -116,7 +116,7 @@ function drawDot() {
     [currX,currY]
   ];
 
-  var n = 4; // temp
+  var n = 5; // Temp. In the future: get user input
 
   // Store rotation coordinates in an array
   while (origPointAndItsRotations.length<n) {
@@ -131,12 +131,12 @@ function drawDot() {
 
   var flippedCoordinate = []; // Empty array of arrays
 
-/*
- * Reflect rotated coordinates
+/**
+ * Reflects the rotated coordinates
  */
   for (var i=0; i<n; i++) {
 
-    // Get and fliped coordinates and store in vars a,b
+    // Get fliped coordinates and store in vars a,b
     var a = origPointAndItsRotations[i][0];
     var b = origPointAndItsRotations[i][1];
 
@@ -152,16 +152,6 @@ function drawDot() {
   for (var i=0; i<n; i++) {
     ctx.fillRect(flippedCoordinate[i][0],flippedCoordinate[i][1],pointSize,pointSize);
   }
-
-
-//  [x_,y_] = flip(currX,currY);
-//  ctx.fillRect(x_, y_, pointSize, pointSize);
-
-/*
-  ctx.fillRect(currX, currY, pointSize, pointSize);
-  ctx.fillRect(x_, y_, pointSize, pointSize); // Repeat n-1 times
-*/
-
 
   ctx.closePath();
 }
@@ -208,29 +198,6 @@ function drawLine() {
     ctx.stroke();
     ctx.closePath();
 }
-
-//Not used
-/*
-function reflectTwice() {
-    var a = prevX, a_ = a, b = prevY, b_ = h-b, c = currX, c_ = c, d = currY, d_ = h-d;
-    ctx.beginPath();
-    ctx.moveTo(a, b);
-    ctx.lineTo(c, d);
-    ctx.moveTo(a_, b_);
-    ctx.lineTo(c_, d_);
-    a_ = w-a; b_ = b; c_ = w-c; d_ = d;
-    ctx.moveTo(a_, b_);
-    ctx.lineTo(c_, d_);
-    a_ = w-a; b_ = h-b; c_ = w-c; d_ = h-d;
-    ctx.moveTo(a_, b_);
-    ctx.lineTo(c_, d_);
-    ctx.strokeStyle = currentColor;
-    ctx.lineWidth = lineWidth;
-    ctx.lineCap = 'round';
-    ctx.stroke();
-    ctx.closePath();
-}
-*/
 
 function clear() {
     var m = confirm("Wanna clear everything?");
