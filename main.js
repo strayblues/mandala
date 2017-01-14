@@ -99,22 +99,82 @@ function downloadURI(uri, name) {
   delete link;
 }
 
+function flip(x,y) {
+  var y = h-y;
+  var coordinateArray = [x,y];
+  return coordinateArray;
+}
+
 function drawDot() {
   var pointSize = 2; //TODO Make adjustable AND round
   ctx.beginPath();
   ctx.fillStyle = currentColor;
-  ctx.fillRect(currX, currY, pointSize, pointSize);
-  ctx.fillRect(currX, h-currY-pointSize, pointSize, pointSize);
-  ctx.fillRect(w-currX-pointSize, currY, pointSize, pointSize);
-  ctx.fillRect(w-currX-pointSize, h-currY-pointSize, pointSize, pointSize);
 
-  ctx.fillRect(w/2+h/2-currY-pointSize, w/2+h/2-currX-pointSize, pointSize, pointSize);
-  ctx.fillRect(w/2+h/2-currY-pointSize, h/2-w/2+currX, pointSize, pointSize);
-  ctx.fillRect(w/2-h/2+currY, w/2+h/2-currX-pointSize, pointSize, pointSize);
-  ctx.fillRect(w/2-h/2+currY, h/2-w/2+currX, pointSize, pointSize);
+  var x_,y_;
+
+  var origPointAndItsRotations = [
+    [currX,currY]
+  ];
+
+  var n = 4; // temp
+
+  // Store rotation coordinates in an array
+  while (origPointAndItsRotations.length<n) {
+    [x_,y_] = origPointAndItsRotations[origPointAndItsRotations.length-1];
+    origPointAndItsRotations.push(rotate(x_,y_,n));
+  }
+
+  // Draw the rotation coordinates kept in the array
+  for (var i=0; i<n; i++) {
+    ctx.fillRect(origPointAndItsRotations[i][0],origPointAndItsRotations[i][1],pointSize,pointSize);
+  }
+
+  var flippedCoordinate = []; // Empty array of arrays
+
+/*
+ * Reflect rotated coordinates
+ */
+  for (var i=0; i<n; i++) {
+
+    // Get and fliped coordinates and store in vars a,b
+    var a = origPointAndItsRotations[i][0];
+    var b = origPointAndItsRotations[i][1];
+
+    // Flip coordinates
+    var flipResult = flip(a,b);
+
+    // Add flipped coordinates to array
+    flippedCoordinate.push(flipResult);
+
+  }
+
+  // Draw the flip coordinates kept in array
+  for (var i=0; i<n; i++) {
+    ctx.fillRect(flippedCoordinate[i][0],flippedCoordinate[i][1],pointSize,pointSize);
+  }
+
+
+//  [x_,y_] = flip(currX,currY);
+//  ctx.fillRect(x_, y_, pointSize, pointSize);
+
+/*
+  ctx.fillRect(currX, currY, pointSize, pointSize);
+  ctx.fillRect(x_, y_, pointSize, pointSize); // Repeat n-1 times
+*/
+
 
   ctx.closePath();
 }
+
+function rotate(x,y,numOfReflections){
+  var c = Math.cos(2*Math.PI/numOfReflections);
+  var s = Math.sin(2*Math.PI/numOfReflections);
+  var x2 = c*(x-w/2)+s*(h/2-y)+w/2;
+  var y2 = c*(y-h/2)+s*(x-w/2)+h/2;
+  var coordinateArray = [x2,y2];
+  return coordinateArray;
+}
+
 
 function drawLine() {
     var a = prevX, a_ = a, b = prevY, b_ = h-b, c = currX, c_ = c, d = currY, d_ = h-d;
@@ -149,6 +209,8 @@ function drawLine() {
     ctx.closePath();
 }
 
+//Not used
+/*
 function reflectTwice() {
     var a = prevX, a_ = a, b = prevY, b_ = h-b, c = currX, c_ = c, d = currY, d_ = h-d;
     ctx.beginPath();
@@ -168,6 +230,7 @@ function reflectTwice() {
     ctx.stroke();
     ctx.closePath();
 }
+*/
 
 function clear() {
     var m = confirm("Wanna clear everything?");
