@@ -103,6 +103,12 @@ $(":input").bind('keyup mouseup', function () {
   lineWidth = document.getElementById("line-width").value;
 });
 
+// Let user set number of reflections
+// This will get rewritten at some point
+$(":input").bind('keyup mouseup', function () {
+  n = document.getElementById("rotations-num").value;
+});
+
 /*
 // Download. Already have a function for that purpose. Remove?
 function downloadURI(uri, name) {
