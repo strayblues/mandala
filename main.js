@@ -24,11 +24,13 @@ var canvas, ctx, flag = false,
     dot_flag = false;
 
 // Initial brush settings
-var currentColor = "black";
+var currentColor = "mediumvioletred";
 var lineWidth = 2;
 
 // Number of reflections
-var n = 5; // Temp. In the future: get user input (prbly at init()?)
+var n = 7; // Temp. In the future: get user input (prbly at init()?)
+
+var doReflect = false;
 
 function init() {
     // Create and display a canvas element
@@ -136,29 +138,31 @@ function drawDot() {
     ctx.fill();
   }
 
-  var flippedCoordinates = []; // Array of arrays
+  if (doReflect) {
+    var flippedCoordinates = []; // Array of arrays
 
-/**
- * Reflects the rotated coordinates
- */
-  for (var i=0; i<n; i++) {
+  /**
+   * Reflects the rotated coordinates
+   */
+    for (var i=0; i<n; i++) {
 
-    // Get flipped coordinates and store in vars a,b
-    var a = origPointAndItsRotations[i][0];
-    var b = origPointAndItsRotations[i][1];
+      // Get flipped coordinates and store in vars a,b
+      var a = origPointAndItsRotations[i][0];
+      var b = origPointAndItsRotations[i][1];
 
-    // Flip coordinates
-    var flipResult = flip(a,b);
+      // Flip coordinates
+      var flipResult = flip(a,b);
 
-    // Add flipped coordinates to array
-    flippedCoordinates.push(flipResult);
-  }
+      // Add flipped coordinates to array
+      flippedCoordinates.push(flipResult);
+    }
 
-  // Draw/display the flipped coordinates kept in the array
-  for (var i=0; i<n; i++) {
-    ctx.beginPath();
-    ctx.arc(flippedCoordinates[i][0],flippedCoordinates[i][1],lineWidth/2,0, 2 * Math.PI);
-    ctx.fill();
+    // Draw/display the flipped coordinates kept in the array
+    for (var i=0; i<n; i++) {
+      ctx.beginPath();
+      ctx.arc(flippedCoordinates[i][0],flippedCoordinates[i][1],lineWidth/2,0, 2 * Math.PI);
+      ctx.fill();
+    }
   }
 }
 
@@ -204,20 +208,23 @@ function drawLine() {
     /**
      * Reflects the rotated coordinates
      */
-    var flippedLineStartPoints = [];
-    for (var i=0; i<n; i++) {
-      flippedLineStartPoints.push(flip(lineStartPoints[i][0],lineStartPoints[i][1]));
-    }
+     if (doReflect) {
 
-    var flippedLineEndPoints = [];
-    for (var i=0; i<n; i++) {
-      flippedLineEndPoints.push(flip(lineEndPoints[i][0],lineEndPoints[i][1]));
-    }
+        var flippedLineStartPoints = [];
+        for (var i=0; i<n; i++) {
+          flippedLineStartPoints.push(flip(lineStartPoints[i][0],lineStartPoints[i][1]));
+        }
 
-    for (var i=0; i<n; i++) {
-      ctx.moveTo(flippedLineStartPoints[i][0],flippedLineStartPoints[i][1]);
-      ctx.lineTo(flippedLineEndPoints[i][0],flippedLineEndPoints[i][1]);
-    }
+        var flippedLineEndPoints = [];
+        for (var i=0; i<n; i++) {
+          flippedLineEndPoints.push(flip(lineEndPoints[i][0],lineEndPoints[i][1]));
+        }
+
+        for (var i=0; i<n; i++) {
+          ctx.moveTo(flippedLineStartPoints[i][0],flippedLineStartPoints[i][1]);
+          ctx.lineTo(flippedLineEndPoints[i][0],flippedLineEndPoints[i][1]);
+        }
+     }
 
     // Brush settings
     ctx.strokeStyle = currentColor;
