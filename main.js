@@ -44,8 +44,8 @@ function init() {
     // Create and display a canvas element
     canvas = document.getElementById('myMandala');
     ctx = canvas.getContext("2d");
-    canvas.height = window.innerHeight-40;
-    canvas.width = window.innerHeight-40;
+    canvas.height = window.innerHeight-45;
+    canvas.width = window.innerHeight-45;
     w = canvas.width;
     h = canvas.height;
 
