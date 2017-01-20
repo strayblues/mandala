@@ -115,8 +115,6 @@ function flip(x,y) {
 
 // Draw a dot in response to a single mouse click
 function drawDot() {
-  var pointSize = 2; //TODO Make adjustable AND round
-  ctx.beginPath();
   ctx.fillStyle = currentColor;
 
   // Array of coordinate pairs
@@ -133,10 +131,12 @@ function drawDot() {
 
   // Draw the rotation coordinates kept in the array
   for (var i=0; i<n; i++) {
-    ctx.fillRect(origPointAndItsRotations[i][0],origPointAndItsRotations[i][1],pointSize,pointSize);
+    ctx.beginPath();
+    ctx.arc(origPointAndItsRotations[i][0],origPointAndItsRotations[i][1],lineWidth/2,0, 2 * Math.PI);
+    ctx.fill();
   }
 
-  var flippedCoordinate = []; // Array of arrays
+  var flippedCoordinates = []; // Array of arrays
 
 /**
  * Reflects the rotated coordinates
@@ -151,15 +151,15 @@ function drawDot() {
     var flipResult = flip(a,b);
 
     // Add flipped coordinates to array
-    flippedCoordinate.push(flipResult);
+    flippedCoordinates.push(flipResult);
   }
 
   // Draw/display the flipped coordinates kept in the array
   for (var i=0; i<n; i++) {
-    ctx.fillRect(flippedCoordinate[i][0],flippedCoordinate[i][1],pointSize,pointSize);
+    ctx.beginPath();
+    ctx.arc(flippedCoordinates[i][0],flippedCoordinates[i][1],lineWidth/2,0, 2 * Math.PI);
+    ctx.fill();
   }
-
-  ctx.closePath();
 }
 
 // Calculate rotations and store rotated coordinates in array
