@@ -31,6 +31,14 @@ var lineWidth = 2;
 var n = 7; // Temp. In the future: get user input (prbly at init()?)
 
 var doReflect = false;
+$("#do-reflect").change(function() {
+  if(this.checked) {
+      doReflect = true;
+    }
+  else {
+      doReflect = false;
+  }
+});
 
 function init() {
     // Create and display a canvas element
