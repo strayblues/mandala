@@ -22,6 +22,7 @@
   <script src="main.js"></script>
   <script src="FileSaver.js"></script>
   <script src="canvas-to-blob.min.js"></script>
+  <script src="https://use.fontawesome.com/8f61b97be3.js"></script>
 </head>
 <body>
   <div id="mySidenav" class="sidenav">
@@ -30,26 +31,26 @@
       <input type='text' id="selectionPalette" />
     </div>
     <div id="set-line-width">
-    <a>Brush size <input type="number" min="1" id="line-width" style="width:3rem" value="2"></a>
+      <a>Brush size <input type="number" min="1" id="line-width" style="width:3rem" value="2"></a>
     </div>
-    <a id="btn-num-ref">Rotations <input type="number" id="rotations-num" min="2" style="width:3rem" value="7"></a>  
+    <a id="btn-num-ref">Rotations <input type="number" id="rotations-num" min="2" style="width:3rem" value="7"></a>
     <a id="btn-flip-switch"><input type="checkbox" id="do-reflect"> Reflect</a>
     <a id="btn-download">Download</a>
     <a id="btn-clear">Clear</a>
   </div>
 
-  <!-- Push page content to the right of the sidenav-->
   <div id="main">
     <div id="canvas-container">
       <canvas id="myMandala" width="600" height="600">
         <p>Your browser doesn't support canvas.</p>
       </canvas>
     </div>
-    <div>
-      <address>
-      Written by <a href="mailto:strayblues@gmail.com">Hagar Shilo</a><br>
-      </address>
-    </div>
   </div>
+  <div class="icon-holder">
+    <a href="//il.linkedin.com/in/hagar-shilo-04651511b"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a>
+    <a href="//github.com/strayblues"><i class="fa fa-github-alt fa-2x" aria-hidden="true"></i></a>
+    <a href="mailto:strayblues@gmail.com"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a>
+  </div>
+
 </body>
 </html>

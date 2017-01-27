@@ -42,6 +42,26 @@ body {
     padding-left: 10rem;
 }
 
+.icon-holder {
+  float: right;
+  display: inline-block;
+  position: relative;
+  transform: translateX(-140%);
+  bottom: 2rem;
+}
+
+.icon-holder a {
+  color: black;
+}
+
+.icon-holder a:hover {
+  color: #555;
+}
+
+.fa {
+  margin-left: 1rem;
+}
+
 .color-picker {
   padding-left: 2rem;
 }
