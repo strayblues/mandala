@@ -46,8 +46,8 @@ body {
   float: right;
   display: inline-block;
   position: relative;
-  transform: translateX(-140%);
-  bottom: 2rem;
+  transform: translateX(-10%);
+  bottom: 0;
 }
 
 .icon-holder a {
