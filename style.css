@@ -3,6 +3,7 @@ body {
   font-family: 'Varela Round', sans-serif;
   background-color: #e8aecd;
   background-color: #111;
+
 }
 
 #myMandala {
@@ -31,17 +32,18 @@ body {
   right: 0;
 }
 
-/*
+
 .fb-like {
   clear: both;
-  padding: 8px 8px 8px 38px;
+  padding: 8px 8px 8px 34px;
   height: 20px;
 }
 
 .fb-like a {
   text-decoration: none;
 }
-*/
+
+
 .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
@@ -86,3 +88,29 @@ body {
 #btn-clear, #btn-download, #set-line-width, #btn-flip-switch, #btn-num-ref {
   margin-top: 1.5rem;
 }
+
+.heart {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  display: inline-block;
+  width: 90%;
+  text-align: center;
+  color: #888;
+  transition: 0.5s
+}
+
+.heart:hover {
+  color: red;
+
+}
+
+.user-settings {
+  display: inline-block;
+  width: 60%;
+
+/*
+
+.light {
+  color: #111;
+}
+*/

@@ -24,13 +24,13 @@ var canvas, ctx, flag = false,
     dot_flag = false;
 
 // Initial brush settings
-var currentColor = "mediumvioletred";
+var currentColor = "lime";
 var lineWidth = 2;
 
 // Number of reflections
-var n = 7; // Temp. In the future: get user input (prbly at init()?)
+var n = 4; // Temp. In the future: get user input (prbly at init()?)
 
-var doReflect = false;
+var doReflect = true;
 $("#do-reflect").change(function() {
   if(this.checked) {
       doReflect = true;
