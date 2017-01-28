@@ -25,7 +25,17 @@
   <script src="https://use.fontawesome.com/8f61b97be3.js"></script>
 </head>
 <body>
-  <div id="mySidenav" class="sidenav">
+  <!-- FB -->
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+  <div class="sidenav">
     <a id="btn-color">Color</a>
     <div class="color-picker">
       <input type='text' id="selectionPalette" />
@@ -46,11 +56,21 @@
       </canvas>
     </div>
   </div>
-  <div class="icon-holder">
-    <a href="//il.linkedin.com/in/hagar-shilo-04651511b"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a>
-    <a href="//github.com/strayblues"><i class="fa fa-github-alt fa-2x" aria-hidden="true"></i></a>
-    <a href="mailto:strayblues@gmail.com"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a>
-  </div>
-
+  <div class="sidenav2">
+    <div class="icon-holder">
+      <a href="//il.linkedin.com/in/hagar-shilo-04651511b"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a>
+      <a href="//github.com/strayblues"><i class="fa fa-github-alt fa-2x" aria-hidden="true"></i></a>
+      <a href="mailto:strayblues@gmail.com"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a>
+    </div>
+    <!--
+    <div class="fb-like"
+          data-href="https://www.facebook.com/Mandala-1247769641955808/"
+          data-width="30px"
+          data-layout="button_count"
+          data-action="like"
+          data-show-faces="true"
+          data-share="true"></div>
+    </div>
+  -->
 </body>
 </html>
