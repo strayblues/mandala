@@ -6,7 +6,7 @@ body {
 }
 
 #myMandala {
-  background-color: white;
+  background-color: black;
   display: inline;
   cursor: url('cursor-pencil.png'), cell;
 }
