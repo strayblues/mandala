@@ -2,6 +2,7 @@
 body {
   font-family: 'Varela Round', sans-serif;
   background-color: #e8aecd;
+  background-color: #111;
 }
 
 #myMandala {
@@ -22,6 +23,7 @@ body {
 }
 
 .sidenav2 {
+  background-color: #111;
   height: 100%;
   width: 10rem;
   position: fixed;
@@ -29,6 +31,7 @@ body {
   right: 0;
 }
 
+/*
 .fb-like {
   clear: both;
   padding: 8px 8px 8px 38px;
@@ -38,23 +41,22 @@ body {
 .fb-like a {
   text-decoration: none;
 }
-
-/* The navigation menu links */
+*/
 .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 130%;
     color: #818181;
     display: block;
-    transition: 0.3s
+    transition: 0.5s
 }
 
-.sidenav a:hover, .offcanvas a:focus{
+.sidenav a:hover, .offcanvas a:focus, .icon-holder a:hover {
     color: #f1f1f1;
 }
 
 #main {
-    transition: margin-left .5s;
+    transition: margin-left 0.5s;
     padding-left: 10rem;
 }
 
@@ -68,11 +70,9 @@ body {
 }
 
 .icon-holder a {
-  color: black;
-}
+  color: #888;
+  transition: 0.5s
 
-.icon-holder a:hover {
-  color: #555;
 }
 
 .fa {
