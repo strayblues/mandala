@@ -24,7 +24,7 @@ var canvas, ctx, flag = false,
     dot_flag = false;
 
 // Initial brush settings
-var currentColor = "lime";
+var currentColor = "#449afc";
 var lineWidth = 2;
 
 // Number of reflections
