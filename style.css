@@ -1,12 +1,16 @@
 
 body {
   font-family: 'Varela Round', sans-serif;
-  background-color: #e8aecd;
+}
+
+body, .sidenav {
   background-color: #111;
+  background-color: #e8aecd;
+  background-color: #d3d1d2;
 }
 
 #myMandala {
-  background-color: #fcfcfc;
+  background-color: #f2f2f2;
   display: inline;
   cursor: url('cursor-pencil.png'), cell;
 }
@@ -17,7 +21,6 @@ body {
   position: fixed;
   z-index: 1; /* Stay on top */
   top: 0;
-  background-color: #111;
 }
 
 .leftnav {
@@ -67,7 +70,7 @@ body {
 }
 
 .icon-holder a {
-  color: #888;
+  color: #818181;
   transition: 0.5s
 
 }
@@ -90,7 +93,7 @@ body {
   display: inline-block;
   width: 90%;
   text-align: center;
-  color: #888;
+  color: #818181;
   transition: 0.5s
 }
 
