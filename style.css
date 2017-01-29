@@ -4,10 +4,10 @@ body {
 }
 
 body, .sidenav {
+  background-color: #add3ff;
+  background-color: #e8aecd;
   background-color: #111;
   background-color: #d3d3d3;
-  background-color: #e8aecd;
-  background-color: #add3ff;
 }
 
 #myMandala {
@@ -27,6 +27,10 @@ body, .sidenav {
 .leftnav {
   left: 0;
   padding-top: 2rem;
+/*
+  background-color: #add3ff;
+  background-color: #e8aecd;
+*/
 }
 
 .rightnav {
@@ -67,9 +71,8 @@ body, .sidenav {
   color: #2580e8; // lighter blue
   */
   color: #1657a0; // darker blue
-
-
 }
+
 
 .icon-holder {
   display: inline-block;
@@ -81,8 +84,8 @@ body, .sidenav {
 }
 
 .icon-holder a {
-  transition: 0.5s
-
+  transition: 0.5s;
+  color: #dd2581; // pink
 }
 
 .fa {
