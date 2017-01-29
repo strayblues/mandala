@@ -3,48 +3,43 @@ body {
   font-family: 'Varela Round', sans-serif;
   background-color: #e8aecd;
   background-color: #111;
-
 }
 
 #myMandala {
-  background-color: black;
+  background-color: #fcfcfc;
   display: inline;
   cursor: url('cursor-pencil.png'), cell;
 }
 
 .sidenav {
-    height: 100%;
-    width: 10rem;
-    position: fixed;
-    z-index: 1; /* Stay on top */
-    top: 0;
-    left: 0;
-    background-color: #111;
-    padding-top: 2rem;
-}
-
-.sidenav2 {
-  background-color: #111;
   height: 100%;
   width: 10rem;
   position: fixed;
+  z-index: 1; /* Stay on top */
   top: 0;
-  right: 0;
+  background-color: #111;
 }
 
+.leftnav {
+  left: 0;
+  padding-top: 2rem;
+}
+
+.rightnav {
+  right: 0;
+  padding-top: 0.5rem;
+}
 
 .fb-like {
-  clear: both;
   padding: 8px 8px 8px 34px;
-  height: 20px;
+/*  clear: both;*/
 }
 
 .fb-like a {
   text-decoration: none;
 }
 
-
-.sidenav a {
+.leftnav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 130%;
@@ -53,7 +48,7 @@ body {
     transition: 0.5s
 }
 
-.sidenav a:hover, .offcanvas a:focus, .icon-holder a:hover {
+.leftnav a:hover, .offcanvas a:focus, .icon-holder a:hover {
     color: #f1f1f1;
 }
 
