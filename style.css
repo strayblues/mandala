@@ -11,7 +11,7 @@ body, .sidenav {
 }
 
 #myMandala {
-  background-color: #f2f2f2;
+  background-color: white;
   display: inline;
   cursor: url('cursor-pencil.png'), cell;
 }
