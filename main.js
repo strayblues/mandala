@@ -109,19 +109,6 @@ $(":input").bind('keyup mouseup', function () {
   n = document.getElementById("rotations-num").value;
 });
 
-/*
-// Download. Already have a function for that purpose. Remove?
-function downloadURI(uri, name) {
-  var link = document.createElement("a");
-  link.download = name;
-  link.href = uri;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-  delete link;
-}
-*/
-
 // Flip the coordinates
 function flip(x,y) {
   var y = h-y;
