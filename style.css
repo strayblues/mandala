@@ -1,3 +1,20 @@
+@media print {
+  .sidenav {
+    display: none;
+  }
+  canvas {
+    padding: 0;
+    margin: auto;
+    display: block;
+    position: absolute;
+    width: 850px;
+    height: 850px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
 
 body {
   font-family: 'Varela Round', sans-serif;
