@@ -113,7 +113,7 @@ body, .sidenav {
   padding-left: 2rem;
 }
 
-#btn-clear, #btn-download, #set-line-width, #btn-flip-switch, #btn-num-ref {
+#btn-clear, #btn-save, #btn-print, #set-line-width, #btn-flip-switch, #btn-num-ref {
   margin-top: 1.5rem;
 }
 
