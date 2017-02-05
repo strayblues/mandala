@@ -21,10 +21,12 @@ body {
 }
 
 body, .sidenav {
-  background-color: #add3ff;
-  background-color: #e8aecd;
-  background-color: #111;
-  background-color: #c3c3c3;
+  /*
+  background-color: #e8aecd; // pink
+  background-color: #add3ff; // light blue
+  */
+  background-color: #c3c3c3; // light gray
+
 }
 
 #myMandala {
@@ -81,13 +83,16 @@ body, .sidenav {
     padding-left: 10rem;
 }
 
+/**
+* Color of the text buttons
+*/
 .icon-holder a, .leftnav a {
 /*
   color: #818181; // gray
-  color: #dd2581; // pink
   color: #2580e8; // lighter blue
-  */
   color: #1657a0; // darker blue
+  */
+  color: #dd2581; // pink
 }
 
 
@@ -113,7 +118,7 @@ body, .sidenav {
   padding-left: 2rem;
 }
 
-#btn-clear, #btn-save, #btn-print, #set-line-width, #btn-flip-switch, #btn-num-ref {
+#btn-clear, #btn-download, #btn-print, #set-line-width, #btn-flip-switch, #btn-num-ref {
   margin-top: 1.5rem;
 }
 
