@@ -22,11 +22,10 @@ body {
 
 body, .sidenav {
   /*
-  background-color: #e8aecd; // pink
+  background-color: #c3c3c3; // light gray
   background-color: #add3ff; // light blue
   */
-  background-color: #c3c3c3; // light gray
-
+  background-color: #e8aecd; // pink
 }
 
 #myMandala {
