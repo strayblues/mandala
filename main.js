@@ -19,13 +19,31 @@ window.onbeforeunload = function (e) {
 $(function(){
 
 var canvas, ctx, flag = false,
-    prevCoords = [0,0]
-    currCoords = [0,0]
+    prevCoords = [0,0],
+    currCoords = [0,0],
     dot_flag = false;
 
-// Initial brush settings
-var currentColor = "#449afc";
-var lineWidth = 2;
+// localStorage settings
+
+function settingsVariable(name, defaultValue) {
+    if (!localStorage.getItem(name)) {
+        localStorage.setItem(name, defaultValue);
+    }
+
+    return {
+        get: function() {
+            return localStorage.getItem(name);
+        },
+        set: function(value) {
+            localStorage.setItem(name, value);
+        }
+    };
+}
+
+var settings = {
+    currentColor: settingsVariable('currentColor', '#449afc'),
+    lineWidth: settingsVariable('lineWidth', 2)
+};
 
 // Number of reflections
 var n = 4; // Temp. In the future: get user input (prbly at init()?)
@@ -66,16 +84,16 @@ function init() {
     // The Spectrum color picker selection palette
     $("#selectionPalette").spectrum({
         showPalette: true,
-        color: currentColor,
+        color: settings.currentColor.get(),
         chooseText: "Save color",
         palette: [ ],
         showSelectionPalette: true, // true by default
         selectionPalette: [ ],
         change: function(color){
-          currentColor = color.toHexString();
+          settings.currentColor.set(color.toHexString());
         },
         move: function(color){
-          currentColor = color.toHexString();
+          settings.currentColor.set(color.toHexString());
         }
     });
 
@@ -100,7 +118,7 @@ init();
 // Let user set brush size
 // This will get rewritten at some point
 $(":input").bind('keyup mouseup', function () {
-  lineWidth = document.getElementById("line-width").value;
+  settings.lineWidth.set(document.getElementById("line-width").value);
 });
 
 // Let user set number of reflections
@@ -118,7 +136,7 @@ function flip(x,y) {
 
 // Draw a dot in response to a single mouse click
 function drawDot() {
-  ctx.fillStyle = currentColor;
+  ctx.fillStyle = settings.currentColor.get();
 
   // Array of coordinate pairs
   var origPointAndItsRotations = [
@@ -135,7 +153,13 @@ function drawDot() {
   // Draw the rotation coordinates kept in the array
   for (var i=0; i<n; i++) {
     ctx.beginPath();
-    ctx.arc(origPointAndItsRotations[i][0],origPointAndItsRotations[i][1],lineWidth/2,0, 2 * Math.PI);
+    ctx.arc(
+        origPointAndItsRotations[i][0],
+        origPointAndItsRotations[i][1],
+        settings.lineWidth.get() / 2,
+        0,
+        2 * Math.PI
+    );
     ctx.fill();
   }
 
@@ -161,7 +185,13 @@ function drawDot() {
     // Draw/display the flipped coordinates kept in the array
     for (var i=0; i<n; i++) {
       ctx.beginPath();
-      ctx.arc(flippedCoordinates[i][0],flippedCoordinates[i][1],lineWidth/2,0, 2 * Math.PI);
+      ctx.arc(
+          flippedCoordinates[i][0],
+          flippedCoordinates[i][1],
+          settings.lineWidth.get() / 2,
+          0,
+          2 * Math.PI
+      );
       ctx.fill();
     }
   }
@@ -228,8 +258,8 @@ function drawLine() {
      }
 
     // Brush settings
-    ctx.strokeStyle = currentColor;
-    ctx.lineWidth = lineWidth;
+    ctx.strokeStyle = settings.currentColor.get();
+    ctx.lineWidth = settings.lineWidth.get();
     ctx.lineCap = 'round';
 
     // Display the linez
