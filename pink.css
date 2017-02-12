@@ -22,11 +22,10 @@ body {
 
 body, .sidenav {
   /*
-  background-color: #e8aecd; // pink
+  background-color: #c3c3c3; // light gray
   background-color: #add3ff; // light blue
   */
-  background-color: #c3c3c3; // light gray
-
+  background-color: #e8aecd; // pink
 }
 
 #myMandala {
@@ -74,24 +73,27 @@ body, .sidenav {
     transition: 0.5s
 }
 
-/**
-* Color of text buttons
-*/
- .leftnav a {
-   color: #415caa;
- }
-.leftnav a:hover, .offcanvas a:focus {
-    color: #2b8eff;
-}
-
-.icon-holder a:hover {
-  color: #666;
+.leftnav a:hover, .offcanvas a:focus, .icon-holder a:hover {
+    color: #f1f1f1;
 }
 
 #main {
     transition: margin-left 0.5s;
     padding-left: 10rem;
 }
+
+/**
+* Color of the text buttons
+*/
+.icon-holder a, .leftnav a {
+/*
+  color: #818181; // gray
+  color: #2580e8; // lighter blue
+  color: #1657a0; // darker blue
+  */
+  color: #dd2581; // pink
+}
+
 
 .icon-holder {
   display: inline-block;
@@ -104,11 +106,6 @@ body, .sidenav {
 
 .icon-holder a {
   transition: 0.5s;
-  /*
-  color: #818181; // gray
-  color: #2580e8; // lighter blue
-  color: #1657a0; // darker blue
-  */
   color: #dd2581; // pink
 }
 
@@ -137,6 +134,7 @@ body, .sidenav {
 
 .heart:hover {
   color: red;
+
 }
 
 .user-settings {
