@@ -111,6 +111,9 @@ function init() {
 
     // Clear the canvas
     $('#btn-clear').click(clear);
+
+    // read lineWidth from localStorage
+    $('#line-width').val(settings.lineWidth.get());
 }
 
 init();
