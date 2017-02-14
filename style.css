@@ -124,10 +124,11 @@ body, .sidenav {
   margin-left: 1.5rem;
   padding-top: 5rem;
   color: #1b95e0;
+  transition: 0.5s
 }
 
-.fa-twitter a:hover {
-  color: white;
+.fa-twitter:hover {
+  color: #77cbff;
 }
 
 .color-picker {
