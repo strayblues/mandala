@@ -126,6 +126,10 @@ body, .sidenav {
   color: #1b95e0;
 }
 
+.fa-twitter a:hover {
+  color: white;
+}
+
 .color-picker {
   padding-left: 2rem;
 }
