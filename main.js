@@ -307,7 +307,7 @@ function onMouseMove(e) {
 
 // Popup window for Twitter share button
 $('#popup').click(function(){
-  var myWindow = window.open("https://twitter.com/intent/tweet", "Twit", "width=550,height=350");
+  var myWindow = window.open("https://twitter.com/intent/tweet?text=Hello%20world", "Twit", "width=550,height=350");
 });
 
 
