@@ -57,8 +57,12 @@ body, .sidenav {
   padding-top: 0.5rem;
 }
 
+.share {
+  text-align: center;
+}
+
 .fb-like {
-  padding: 8px 8px 8px 34px;
+  padding: 8px 8px 8px 8px;
 /*  clear: both;*/
 }
 
@@ -114,6 +118,10 @@ body, .sidenav {
 
 .fa {
   margin-left: 1rem;
+}
+
+.fa-twitter {
+  color: #1b95e0;
 }
 
 .color-picker {
