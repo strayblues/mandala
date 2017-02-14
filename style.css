@@ -62,7 +62,7 @@ body, .sidenav {
 }
 
 .fb-like {
-  padding: 8px 8px 8px 8px;
+  padding: 8px 8px 8px 34px;
 /*  clear: both;*/
 }
 
@@ -121,6 +121,8 @@ body, .sidenav {
 }
 
 .fa-twitter {
+  margin-left: 1.5rem;
+  padding-top: 5rem;
   color: #1b95e0;
 }
 
