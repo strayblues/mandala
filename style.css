@@ -110,8 +110,9 @@ body, .sidenav {
 .icon-holder-heading {
   text-align: left;
   font-family: 'Montserrat', sans-serif;
-  color: #4864b4;
+  color: #dd2581;
   font-size: 90%;
+  padding-bottom: 1rem;
 }
 
 .icon-holder {
@@ -134,7 +135,7 @@ body, .sidenav {
 
 .icon-row {
   text-align: left;
-  transform: translateX(-10%)
+  transform: translateX(-7.5%)
 }
 
 .fa {
