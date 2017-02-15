@@ -115,6 +115,14 @@ body, .sidenav {
   margin-top: 1rem;
 }
 
+#line-width, #rotations-num {
+  background-color: #eee;
+}
+/*
+input:disabled{
+    background-color:green;
+}*/
+
 #btn-clear {
   color: #a31a1a;
 }
