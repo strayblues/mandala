@@ -33,7 +33,7 @@ body, .sidenav {
 
 .sidenav {
   height: 100%;
-  width: 11rem;
+  width: 13rem;
   position: fixed;
   z-index: 1; /* Stay on top */
   top: 0;
@@ -46,7 +46,7 @@ body, .sidenav {
 
 .rightnav {
   right: 0;
-  padding-top: 0.5rem;
+  padding-top: 2rem;
 }
 
 .fb-like a {
@@ -77,7 +77,7 @@ body, .sidenav {
 
 #main {
     transition: margin-left 0.5s;
-    padding-left: 11rem;
+    padding-left: 13rem;
 }
 
 .twitter-buttons {
@@ -90,45 +90,23 @@ body, .sidenav {
 
 .icon-holder {
   position: absolute;
-  bottom: 35px;
-  transform: translateX(40%);
+  bottom: 55px;
+  transform: translateX(58%);
 
 }
-/*
-.icon-holder-heading {
-  text-align: left;
-  font-family: 'Montserrat', sans-serif;
-  color: #dd2581;
-  font-size: 90%;
-}
-*/
-
 .icon-holder a {
   transition: 0.5s;
   color: #dd2581; // pink
 }
 
 .top-links {
-  margin-top: 2rem;
+  margin-top: 0.5rem;
   text-align: center;
 }
 
 .fa {
   margin-left: 0.5rem;
 }
-
-/*
-.fa-twitter {
-  margin-left: 1.5rem;
-  padding-top: 5rem;
-  color: #1b95e0;
-  transition: 0.5s
-}
-
-.fa-twitter:hover {
-  color: #77cbff;
-}
-*/
 
 .color-picker {
   padding-left: 2rem;
@@ -147,8 +125,30 @@ body, .sidenav {
 }
 
 #btn-color, #btn-line-width, #btn-num-ref, #btn-flip-switch {
-  font-size: 80%;
+  font-size: 110%;
 }
+
+/*
+.icon-holder-heading {
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+  color: #dd2581;
+  font-size: 90%;
+}
+*/
+
+/*
+.fa-twitter {
+  margin-left: 1.5rem;
+  padding-top: 5rem;
+  color: #1b95e0;
+  transition: 0.5s
+}
+
+.fa-twitter:hover {
+  color: #77cbff;
+}
+*/
 
 /*
 .heart {
