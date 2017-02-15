@@ -111,17 +111,18 @@ body, .sidenav {
 .color-picker {
 }
 
-#btn-clear, #btn-download, #btn-print, #set-line-width, #btn-flip-switch, #btn-num-ref {
+#btn-clear, #btn-download, #btn-print, #set-line-width, #btn-flip-switch, #btn-num-rot {
   margin-top: 1rem;
 }
 
 #line-width, #rotations-num {
   background-color: #eee;
 }
-/*
-input:disabled{
-    background-color:green;
-}*/
+
+input[type=checkbox] {
+  font-size: 100%;
+  background-color: #eee;
+}
 
 #btn-clear {
   color: #a31a1a;
@@ -131,7 +132,7 @@ input:disabled{
   color: #f21f1f;
 }
 
-#btn-color, #btn-line-width, #btn-num-ref, #btn-flip-switch {
+#btn-color, #btn-line-width, #btn-num-rot, #btn-flip-switch {
   font-size: 110%;
 }
 
