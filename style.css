@@ -138,6 +138,14 @@ body, .sidenav {
   margin-top: 1rem;
 }
 
+#btn-clear {
+  color: red;
+}
+
+#btn-color, #btn-line-width, #btn-num-ref, #btn-flip-switch {
+  font-size: 80%;
+}
+
 /*
 .heart {
   margin-top: 1rem;
