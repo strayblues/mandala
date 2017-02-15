@@ -21,10 +21,6 @@ body {
 }
 
 body, .sidenav {
-  /*
-  background-color: #e8aecd; // pink
-  background-color: #add3ff; // light blue
-  */
   background-color: #c3c3c3; // light gray
 
 }
@@ -46,21 +42,12 @@ body, .sidenav {
 .leftnav {
   left: 0;
   padding-top: 2rem;
-/*
-  background-color: #add3ff;
-  background-color: #e8aecd;
-*/
 }
 
 .rightnav {
   right: 0;
   padding-top: 0.5rem;
 }
-
-.twitter-share-button, .fb-like {
-  padding: 8px 8px 8px 56px;
-}
-
 
 .fb-like a {
   text-decoration: none;
@@ -93,55 +80,41 @@ body, .sidenav {
     padding-left: 11rem;
 }
 
-.floor {
-  margin-top: 6rem;
+.twitter-buttons {
+  margin-top: 0.5rem;
 }
 
-.twitter-follow-button {
-  padding-bottom: 1rem;
-  padding-top: 1rem;
-  text-align: left;
+.twitter-buttons, .fb-like {
+  text-align: center;
 }
 
+.icon-holder {
+  position: absolute;
+  bottom: 35px;
+  transform: translateX(40%);
+
+}
+/*
 .icon-holder-heading {
   text-align: left;
   font-family: 'Montserrat', sans-serif;
   color: #dd2581;
   font-size: 90%;
-  padding-bottom: 1rem;
 }
-
-.icon-holder {
-  padding-top: 2rem;
-  display: inline-block;
-/*  transform: translateX(5%);
-  margin-top: 2rem;
-  margin-bottom: 2rem;*/
-}
+*/
 
 .icon-holder a {
   transition: 0.5s;
-  /*
-  color: #818181; // gray
-  color: #2580e8; // lighter blue
-  color: #1657a0; // darker blue
-  */
   color: #dd2581; // pink
 }
 
-.icon-row {
-  text-align: left;
-  transform: translateX(-7.5%)
-}
-
-.share {
-  text-align: left;
-  transform: translateX(-7.5%)
-
+.top-links {
+  margin-top: 2rem;
+  text-align: center;
 }
 
 .fa {
-  margin-left: 1rem;
+  margin-left: 0.5rem;
 }
 
 /*
@@ -162,9 +135,10 @@ body, .sidenav {
 }
 
 #btn-clear, #btn-download, #btn-print, #set-line-width, #btn-flip-switch, #btn-num-ref {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
+/*
 .heart {
   margin-top: 1rem;
   margin-bottom: 2rem;
@@ -179,7 +153,7 @@ body, .sidenav {
 .heart:hover {
   color: red;
 }
-
+*/
 .user-settings {
   display: inline-block;
   width: 60%;
