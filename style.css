@@ -104,22 +104,18 @@ body, .sidenav {
   text-align: center;
 }
 
-.fa {
+.icon-holder a{
   margin-left: 0.5rem;
 }
 
 .color-picker {
 }
-
-#btn-clear, #btn-download, #btn-print, #set-line-width, #btn-flip-switch, #btn-num-rot {
-  margin-top: 1rem;
+/*
+#btn-clear, #btn-download, #btn-print {
+  margin-top: 0.75rem;
 }
-
-#line-width, #rotations-num {
-  background-color: #eee;
-}
-
-input[type=checkbox] {
+*/
+#line-width, #rotations-num, input[type=checkbox]{
   background-color: #eee;
 }
 
@@ -132,7 +128,26 @@ input[type=checkbox] {
 }
 
 #btn-color, #btn-line-width, #btn-num-rot, #btn-flip-switch {
-  font-size: 110%;
+  font-size: 100%;
+}
+
+.row {
+  width: 100%;
+  margin: 0 auto;
+  display: inline-block;
+  background-color: #ddd;
+}
+
+.row-item {
+  width: 47%;
+  float: left;
+  display: inline-block;
+}
+
+.row-item-1 {
+  border-right: solid #c3c3c3 0.25rem;
+  border-left: solid #c3c3c3 0.25rem;
+
 }
 
 /*

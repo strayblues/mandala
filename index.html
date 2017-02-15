@@ -37,14 +37,36 @@
   }(document, 'script', 'facebook-jssdk'));</script>
 
   <div class="sidenav leftnav">
-    <div class="color-picker">
-      <a id="btn-color">Color <input type='text' id="selectionPalette" /></a>
+    <div class="row">
+      <div class="color-picker row-item row-item-1">
+        <a id="btn-color">Color <br/>
+          <input type='text' id="selectionPalette" /></a>
+      </div>
+      <div id="set-line-width" class="row-item">
+        <a id="btn-line-width">Size <br/>
+          <input type="number"
+                  min="1"
+                  id="line-width"
+                  style="width:2.25rem"
+                  value="2"></a>
+      </div>
     </div>
-    <div id="set-line-width">
-      <a id="btn-line-width">Size <input type="number" min="1" id="line-width" style="width:2.25rem" value="2"></a>
+    <div class="row">
+      <div class="row-item row-item-1">
+        <a id="btn-num-rot">Repeat <br/>
+          <input type="number"
+                id="rotations-num"
+                min="2"
+                style="width:2.25rem"
+                value="4"><br/> times</a>
+      </div>
+      <div class="row-item">
+        <a id="btn-flip-switch">Reflect?
+          <input type="checkbox"
+                id="do-reflect"
+                checked="true"></a>
+      </div>
     </div>
-    <a id="btn-num-rot">Repeat <input type="number" id="rotations-num" min="2" style="width:2.25rem" value="4"> times</a>
-    <a id="btn-flip-switch">Reflect? <input type="checkbox" id="do-reflect" checked="true"></a>
     <hr>
     <a id="btn-download"><i class="fa fa-save" aria-hidden="true"></i> Save</a>
 
