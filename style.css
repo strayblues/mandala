@@ -57,14 +57,10 @@ body, .sidenav {
   padding-top: 0.5rem;
 }
 
-.share {
-  text-align: center;
+.twitter-share-button, .fb-like {
+  padding: 8px 8px 8px 56px;
 }
 
-.fb-like {
-  padding: 8px 8px 8px 34px;
-/*  clear: both;*/
-}
 
 .fb-like a {
   text-decoration: none;
@@ -136,6 +132,12 @@ body, .sidenav {
 .icon-row {
   text-align: left;
   transform: translateX(-7.5%)
+}
+
+.share {
+  text-align: left;
+  transform: translateX(-7.5%)
+
 }
 
 .fa {
