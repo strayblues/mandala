@@ -139,7 +139,11 @@ body, .sidenav {
 }
 
 #btn-clear {
-  color: red;
+  color: #a31a1a;
+}
+
+#btn-clear:hover {
+  color: #f21f1f;
 }
 
 #btn-color, #btn-line-width, #btn-num-ref, #btn-flip-switch {
