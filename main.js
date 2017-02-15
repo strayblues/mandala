@@ -304,11 +304,11 @@ function onMouseMove(e) {
       drawLine();
   }
 }
-
+/*
 // Popup window for Twitter share button
 $('#popup').click(function(){
-  var myWindow = window.open("https://twitter.com/intent/tweet?text=https://strayblues.github.io/mandala", "Twit", "width=500,height=250");
+  var myWindow = window.open("https://twitter.com/intent/tweet?text=https://strayblues.github.io/mandala", "Tweet", "width=500,height=250");
 });
-
+*/
 
 });

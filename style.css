@@ -37,7 +37,7 @@ body, .sidenav {
 
 .sidenav {
   height: 100%;
-  width: 10rem;
+  width: 11rem;
   position: fixed;
   z-index: 1; /* Stay on top */
   top: 0;
@@ -94,16 +94,32 @@ body, .sidenav {
 
 #main {
     transition: margin-left 0.5s;
-    padding-left: 10rem;
+    padding-left: 11rem;
+}
+
+.floor {
+  margin-top: 6rem;
+}
+
+.twitter-follow-button {
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  text-align: left;
+}
+
+.icon-holder-heading {
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+  color: #4864b4;
+  font-size: 90%;
 }
 
 .icon-holder {
+  padding-top: 2rem;
   display: inline-block;
-  transform: translateX(-10%);
+/*  transform: translateX(5%);
   margin-top: 2rem;
-  margin-bottom: 2rem;
-  float: right;
-  clear: both;
+  margin-bottom: 2rem;*/
 }
 
 .icon-holder a {
@@ -116,10 +132,16 @@ body, .sidenav {
   color: #dd2581; // pink
 }
 
+.icon-row {
+  text-align: left;
+  transform: translateX(-10%)
+}
+
 .fa {
   margin-left: 1rem;
 }
 
+/*
 .fa-twitter {
   margin-left: 1.5rem;
   padding-top: 5rem;
@@ -130,6 +152,7 @@ body, .sidenav {
 .fa-twitter:hover {
   color: #77cbff;
 }
+*/
 
 .color-picker {
   padding-left: 2rem;
