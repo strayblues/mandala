@@ -119,6 +119,27 @@ body, .sidenav {
   background-color: #eee;
 }
 
+input {
+    text-align: center;
+    font-size: 14pt;
+}
+
+input[type=checkbox] {
+  width: 35px;
+  height: 35px;
+}
+
+#line-width, #selectionPalette, #rotations-num {
+  width: 2.75rem;
+  height: 1.75rem;
+  border: solid 1px #91765d;
+}
+
+#line-width:hover, #rotations-num:hover {
+  border-color: #F0C49B;
+}
+
+
 #btn-clear {
   color: #a31a1a;
 }
