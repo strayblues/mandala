@@ -54,9 +54,9 @@ body, .sidenav {
 }
 
 .leftnav a {
-    padding: 8px 8px 8px 20px;
+    padding: 1rem;
     text-decoration: none;
-    font-size: 130%;
+    font-size: 125%;
     display: block;
     transition: 0.5s
 }
@@ -136,14 +136,13 @@ body, .sidenav {
   margin: 0 auto;
   display: inline-block;
   background-color: #ddd;
-  border-left: solid #c3c3c3 0.2rem;
+  border-left: solid #c3c3c3 0.1rem;
 }
 
 .row-item {
-  width: 47%;
+  width: 48%;
   float: left;
   display: inline-block;
-
 }
 
 .row-item-1 {
