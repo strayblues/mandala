@@ -148,6 +148,11 @@ body, .sidenav {
 .row-item-1 {
   border-right: solid #c3c3c3 0.25rem;
   border-left: solid #c3c3c3 0.25rem;
+}
+
+.lower-buttons {
+  position: absolute;
+  bottom: 15px;
 
 }
 
