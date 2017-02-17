@@ -42,11 +42,9 @@ function settingsVariable(name, defaultValue) {
 
 var settings = {
     currentColor: settingsVariable('currentColor', '#449afc'),
-    lineWidth: settingsVariable('lineWidth', 2)
+    lineWidth: settingsVariable('lineWidth', 2),
+    rotationsNum: settingsVariable('rotationsNum', 5)
 };
-
-// Number of reflections
-var n = 4; // Temp. In the future: get user input (prbly at init()?)
 
 var doReflect = true;
 $("#do-reflect").change(function() {
@@ -114,6 +112,9 @@ function init() {
 
     // read lineWidth from localStorage
     $('#line-width').val(settings.lineWidth.get());
+
+    // Read rotations-num from localStorage
+    $('#rotations-num').val(settings.rotationsNum.get());
 }
 
 init();
@@ -121,14 +122,14 @@ init();
 // Let user set brush size
 // This will get rewritten at some point
 $(":input").bind('keyup mouseup', function () {
-  settings.lineWidth.set(document.getElementById("line-width").value);
+  settings.lineWidth.set($('#line-width').val());
 });
 
-// Let user set number of reflections
-// This will get rewritten at some point
+//NEW Allow the user to change the number of rotations
 $(":input").bind('keyup mouseup', function () {
-  n = document.getElementById("rotations-num").value;
+  settings.rotationsNum.set($('#rotations-num').val()); //NEW
 });
+
 
 // Flip the coordinates
 function flip(x,y) {
@@ -147,14 +148,14 @@ function drawDot() {
   ];
 
   // Store rotation coordinates in an array
-  while (origPointAndItsRotations.length<n) {
+  while (origPointAndItsRotations.length<settings.rotationsNum.get()) {
     var x_,y_;
     [x_,y_] = origPointAndItsRotations[origPointAndItsRotations.length-1];
-    origPointAndItsRotations.push(rotate(x_,y_,n));
+    origPointAndItsRotations.push(rotate(x_,y_,settings.rotationsNum.get()));
   }
 
   // Draw the rotation coordinates kept in the array
-  for (var i=0; i<n; i++) {
+  for (var i=0; i<settings.rotationsNum.get(); i++) {
     ctx.beginPath();
     ctx.arc(
         origPointAndItsRotations[i][0],
@@ -172,7 +173,7 @@ function drawDot() {
   /**
    * Reflects the rotated coordinates
    */
-    for (var i=0; i<n; i++) {
+    for (var i=0; i<settings.rotationsNum.get(); i++) {
 
       // Get flipped coordinates and store in vars a,b
       var a = origPointAndItsRotations[i][0];
@@ -186,7 +187,7 @@ function drawDot() {
     }
 
     // Draw/display the flipped coordinates kept in the array
-    for (var i=0; i<n; i++) {
+    for (var i=0; i<settings.rotationsNum.get(); i++) {
       ctx.beginPath();
       ctx.arc(
           flippedCoordinates[i][0],
@@ -201,9 +202,9 @@ function drawDot() {
 }
 
 // Calculate rotations and store rotated coordinates in array
-function rotate(x,y,numOfReflections){
-  var c = Math.cos(2*Math.PI/numOfReflections);
-  var s = Math.sin(2*Math.PI/numOfReflections);
+function rotate(x,y,numOfRotations){
+  var c = Math.cos(2*Math.PI/numOfRotations);
+  var s = Math.sin(2*Math.PI/numOfRotations);
   var x2 = c*(x-w/2)+s*(h/2-y)+w/2;
   var y2 = c*(y-h/2)+s*(x-w/2)+h/2;
   var coordinateArray = [x2,y2];
@@ -221,20 +222,20 @@ function drawLine() {
     ];
 
     // Rotate line start point coordinates and store the rotation coordinates in an array
-    while (lineStartPoints.length<n) {
+    while (lineStartPoints.length<settings.rotationsNum.get()) {
       var x,y;
       [x,y] = lineStartPoints[lineStartPoints.length-1];
-      lineStartPoints.push(rotate(x,y,n));
+      lineStartPoints.push(rotate(x,y,settings.rotationsNum.get()));
     }
 
     // Rotate line end point coordinates and store the rotation coordinates in an array
-    while (lineEndPoints.length<n) {
+    while (lineEndPoints.length<settings.rotationsNum.get()) {
       var x,y;
       [x,y] = lineEndPoints[lineEndPoints.length-1];
-      lineEndPoints.push(rotate(x,y,n));
+      lineEndPoints.push(rotate(x,y,settings.rotationsNum.get()));
     }
 
-    for (var i=0; i<n; i++) {
+    for (var i=0; i<settings.rotationsNum.get(); i++) {
       ctx.moveTo(lineStartPoints[i][0],lineStartPoints[i][1]);
       ctx.lineTo(lineEndPoints[i][0],lineEndPoints[i][1]);
     }
@@ -245,16 +246,16 @@ function drawLine() {
      if (doReflect) {
 
         var flippedLineStartPoints = [];
-        for (var i=0; i<n; i++) {
+        for (var i=0; i<settings.rotationsNum.get(); i++) {
           flippedLineStartPoints.push(flip(lineStartPoints[i][0],lineStartPoints[i][1]));
         }
 
         var flippedLineEndPoints = [];
-        for (var i=0; i<n; i++) {
+        for (var i=0; i<settings.rotationsNum.get(); i++) {
           flippedLineEndPoints.push(flip(lineEndPoints[i][0],lineEndPoints[i][1]));
         }
 
-        for (var i=0; i<n; i++) {
+        for (var i=0; i<settings.rotationsNum.get(); i++) {
           ctx.moveTo(flippedLineStartPoints[i][0],flippedLineStartPoints[i][1]);
           ctx.lineTo(flippedLineEndPoints[i][0],flippedLineEndPoints[i][1]);
         }
