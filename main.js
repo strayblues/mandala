@@ -296,7 +296,8 @@ function clear() {
 }
 
 function eventToCanvasCoords(x, y) {
-  return [x - canvas.offsetLeft, y - canvas.offsetTop];
+    var rect = canvas.getBoundingClientRect();
+    return [x - rect.left, y - rect.top];
 }
 
 function handleMouseDown(x, y) {
