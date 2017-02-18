@@ -15,6 +15,7 @@ window.onbeforeunload = function (e) {
     return 'Sure?';
 };
 
+
 // DO EVERYTHING
 $(function(){
 
@@ -67,16 +68,27 @@ function init() {
 
     // Handle mouse/touch events
     $('canvas').on('mousemove', function (e) {
-        onMouseMove(e)
+        onMouseMove(e.clientX, e.clientY);
     });
+    $('canvas').on('touchmove', function (e) {
+        e.preventDefault();
+        onMouseMove(e.targetTouches[0].clientX, e.targetTouches[0].clientY);
+    });
+
     $('canvas').on('mousedown', function (e) {
-        handleMouseDown(e)
+        handleMouseDown(e.clientX, e.clientY);
     });
-    $('canvas').on('mouseup', function (e) {
-        stopDrawing()
+    $('canvas').on('touchstart', function (e) {
+        e.preventDefault();
+        handleMouseDown(e.targetTouches[0].clientX, e.targetTouches[0].clientY);
     });
-    $('canvas').on('mouseout', function (e) {
-        stopDrawing()
+
+    $('canvas').on('mouseup mouseout', function (e) {
+        stopDrawing();
+    });
+    $('canvas').on('touchend touchcancel', function (e) {
+        e.preventDefault();
+        stopDrawing();
     });
 
     // The Spectrum color picker selection palette
@@ -213,6 +225,8 @@ function rotate(x,y,numOfRotations){
 
 // Draw/display lines where the user drags the mouse
 function drawLine() {
+    var x, y, a;
+
     ctx.beginPath();
     var lineStartPoints = [
       prevCoords
@@ -223,15 +237,17 @@ function drawLine() {
 
     // Rotate line start point coordinates and store the rotation coordinates in an array
     while (lineStartPoints.length<settings.rotationsNum.get()) {
-      var x,y;
-      [x,y] = lineStartPoints[lineStartPoints.length-1];
+      a = lineStartPoints[lineStartPoints.length-1];
+      x = a[0];
+      y = a[1];
       lineStartPoints.push(rotate(x,y,settings.rotationsNum.get()));
     }
 
     // Rotate line end point coordinates and store the rotation coordinates in an array
     while (lineEndPoints.length<settings.rotationsNum.get()) {
-      var x,y;
-      [x,y] = lineEndPoints[lineEndPoints.length-1];
+      a = lineEndPoints[lineEndPoints.length-1];
+      x = a[0];
+      y = a[1];
       lineEndPoints.push(rotate(x,y,settings.rotationsNum.get()));
     }
 
@@ -279,12 +295,12 @@ function clear() {
     }
 }
 
-function eventToCanvasCoords(e) {
-  return [e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop];
+function eventToCanvasCoords(x, y) {
+  return [x - canvas.offsetLeft, y - canvas.offsetTop];
 }
 
-function handleMouseDown(e) {
-  currCoords = eventToCanvasCoords(e);
+function handleMouseDown(x, y) {
+  currCoords = eventToCanvasCoords(x, y);
 
   flag = true;
   dot_flag = true;
@@ -298,10 +314,10 @@ function stopDrawing() {
   flag = false;
 }
 
-function onMouseMove(e) {
+function onMouseMove(x, y) {
   if (flag) {
       prevCoords = currCoords;
-      currCoords = eventToCanvasCoords(e);
+      currCoords = eventToCanvasCoords(x, y);
       drawLine();
   }
 }
