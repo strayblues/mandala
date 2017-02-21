@@ -66,6 +66,22 @@ function init() {
     w = canvas.width;
     h = canvas.height;
 
+
+    // Draw background grid
+
+    function drawBoard(){
+      ctx.moveTo(w/2,0);
+      ctx.lineTo(w/2,h);
+      ctx.moveTo(0,h/2);
+      ctx.lineTo(w,h/2);
+
+      ctx.strokeStyle = "lightblue";
+      ctx.stroke();
+    }
+
+    drawBoard();
+
+
     // Handle mouse/touch events
     $('canvas').on('mousemove', function (e) {
         onMouseMove(e.clientX, e.clientY);
