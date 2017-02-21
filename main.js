@@ -75,7 +75,7 @@ function init() {
       ctx.moveTo(0,h/2);
       ctx.lineTo(w,h/2);
 
-      ctx.strokeStyle = "lightblue";
+      ctx.strokeStyle = "#f1f1f1";
       ctx.stroke();
     }
 
