@@ -9,7 +9,7 @@ $(document).ready(function(){
     window.location = "http://mandala.hagarsh.com";
   }
   else {
-    
+
     // Prevent user from accidentally closing the window
     window.onbeforeunload = function (e) {
         e = e || window.event;
