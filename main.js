@@ -8,6 +8,21 @@ $(document).ready(function(){
   if($(window).width() < 700) {
     window.location = "http://mandala.hagarsh.com";
   }
+  else {
+    
+    // Prevent user from accidentally closing the window
+    window.onbeforeunload = function (e) {
+        e = e || window.event;
+
+        // For Crome, IE and Firefox prior to version 4
+        if (e) {
+            e.returnValue = 'Sure?';
+        }
+
+        // For Safari
+        return 'Sure?';
+    };
+  }
 });
 
 // Prevent user from accidentally closing the window
