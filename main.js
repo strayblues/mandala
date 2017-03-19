@@ -5,7 +5,7 @@
 
 // Redirect to mobile based on screen size
 $(document).ready(function(){
-  if($(window).width() < 700) {
+  if(/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase())) {
     window.location = "http://mandala.hagarsh.com";
   }
   else {
