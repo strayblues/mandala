@@ -2,6 +2,14 @@
 * @author Hagar Shilo <strayblues@gmail.com>
 */
 
+
+// Redirect to mobile based on screen size
+$(document).ready(function(){
+  if($(window).width() < 700) {
+    window.location = "http://mandala.hagarsh.com";
+  }
+});
+
 // Prevent user from accidentally closing the window
 window.onbeforeunload = function (e) {
     e = e || window.event;
@@ -57,6 +65,29 @@ $("#do-reflect").change(function() {
   }
 });
 
+// Pre-paint the canvas white - should be called on clear(); too
+
+function paintWhite(){
+ctx.beginPath();
+ctx.rect(0, 0, w, h);
+ctx.fillStyle = "white";
+ctx.fill();
+}
+
+
+// Draw background grid
+
+function drawBoard(){
+  ctx.moveTo(w/2,0);
+  ctx.lineTo(w/2,h);
+  ctx.moveTo(0,h/2);
+  ctx.lineTo(w,h/2);
+  ctx.lineWidth = 1; // So line doesn't change to user settings
+  ctx.strokeStyle = "#f5f5f5";
+  ctx.stroke();
+}
+
+
 function init() {
     // Create and display a canvas element
     canvas = document.getElementById('myMandala');
@@ -66,21 +97,11 @@ function init() {
     w = canvas.width;
     h = canvas.height;
 
+    // Pre-paint canvas so it has white bg on save
+    paintWhite();
 
-    // Draw background grid
-
-    function drawBoard(){
-      ctx.moveTo(w/2,0);
-      ctx.lineTo(w/2,h);
-      ctx.moveTo(0,h/2);
-      ctx.lineTo(w,h/2);
-
-      ctx.strokeStyle = "#f1f1f1";
-      ctx.stroke();
-    }
-
+    // Drow bg grid
     drawBoard();
-
 
     // Handle mouse/touch events
     $('canvas').on('mousemove', function (e) {
@@ -131,7 +152,7 @@ function init() {
     // Handle download of an image file of the canvas
     $('#btn-download').click(function () {
       document.getElementById("myMandala").toBlob(function(blob) {
-        saveAs(blob, 'Mandala.png');
+        saveAs(blob, 'Mandala.jpg');
       });
     });
 
@@ -307,7 +328,11 @@ function drawLine() {
 function clear() {
     var m = confirm("Clear everything?");
     if (m) {
-        ctx.clearRect(0, 0, w, h);
+      // Removing paintWhite below will make the clear steps undone-able
+      // (once undo function is written).
+      ctx.clearRect(0, 0, w, h);
+      paintWhite();
+      drawBoard();
     }
 }
 
