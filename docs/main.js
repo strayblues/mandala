@@ -1,3 +1,5 @@
 $(document).ready(function(){
-  window.location = "http://mandala.hagarsh.com/desktop";
+  setTimeout(function () {
+   window.location.href = "http://mandala.hagarsh.com/desktop";
+ }, 2800);
 });
