@@ -6,7 +6,7 @@
 // Redirect to mobile if a mobile browser is detected
 $(document).ready(function(){
   if(/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase())) {
-    window.location = "http://mandala.hagarsh.com";
+    window.location = "http://mandala.hagarsh.com/mobile";
   }
   else {
 
