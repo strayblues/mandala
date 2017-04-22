@@ -1,5 +1,5 @@
 $(document).ready(function(){
   setTimeout(function () {
-   window.location.href = "http://mandala.hagarsh.com/mobile";
+   window.location.href = "http://mandala.hagarsh.com/desktop";
  }, 2800);
 });
