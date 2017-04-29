@@ -94,8 +94,15 @@ function init() {
     canvas = document.getElementById('myMandala');
     ctx = canvas.getContext("2d");
 
-    canvas.height = window.innerHeight-35;
-    canvas.width = window.innerHeight-35;
+    if (window.innerWidth < window.innerHeight) {
+      canvas.height = window.innerWidth;
+      canvas.width = window.innerWidth;
+    }
+    else {
+      canvas.height = window.innerHeight - $('#menu').height();
+      canvas.width = window.innerHeight  - $('#menu').height();
+    }
+
     w = canvas.width;
     h = canvas.height;
 
@@ -156,7 +163,7 @@ function init() {
     // Some iPhone users may need jpg format
     $('#btn-download').click(function () {
       document.getElementById("myMandala").toBlob(function(blob) {
-        saveAs(blob, 'Mandala.jpg');
+        saveAs(blob, 'Mandala.png');
       });
     });
 
