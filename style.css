@@ -1,3 +1,29 @@
+@media only screen and (max-width : 768px) {
+  /* For MOBILE */
+.social {
+  margin-right: -2px;
+  margin-top: 0.5rem;
+  text-align: center;
+ }
+
+.buttons {
+  margin-left: 4px;
+  margin-right: -4px;
+}
+
+.btn {
+  width: 32%;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.btn {
+
+}
+
+
+}
+
 @media print {
   .sidenav {
     display: none;
@@ -20,15 +46,26 @@ body {
   font-family: 'Varela Round', sans-serif;
 }
 
-body, .sidenav {
+body, .sidenav, #main, html, #menu {
   background-color: #c3c3c3; // light gray
-
 }
 
-#myMandala {
+#menu {
+  margin-top: -5px;
+}
+
+.desktopCanvas, .mobileCanvas {
   background-color: white;
   display: inline;
   cursor: url('cursor-pencil.png'), cell;
+}
+
+.btn-default, .btn-danger {
+  border-color: #666 !important;
+}
+
+.btn-danger {
+  background-color: #888 !important;
 }
 
 .sidenav {
@@ -97,6 +134,7 @@ body, .sidenav {
 .icon-holder a {
   transition: 0.5s;
   color: #dd2581; // pink
+  margin-left: 0.5rem;
 }
 
 .top-links {
@@ -104,32 +142,21 @@ body, .sidenav {
   text-align: center;
 }
 
-.icon-holder a{
-  margin-left: 0.5rem;
-}
-
-.color-picker {
-}
-/*
-#btn-clear, #btn-download, #btn-print {
-  margin-top: 0.75rem;
-}
-*/
 #line-width, #rotations-num, input[type=checkbox]{
   background-color: #eee;
 }
 
 input {
     text-align: center;
-    font-size: 14pt;
+/*    font-size: 10pt;*/
 }
 
 input[type=checkbox] {
-  width: 35px;
-  height: 35px;
+  width: 18px;
+  height: 18px;
 }
 
-#line-width, #selectionPalette, #rotations-num {
+#line-width, .selectionPalette, #rotations-num {
   width: 2.75rem;
   height: 1.75rem;
   border: solid 1px #91765d;
@@ -148,7 +175,7 @@ input[type=checkbox] {
   color: #f21f1f;
 }
 
-#btn-color, #btn-line-width, #btn-num-rot, #btn-flip-switch {
+#btn-color-desk, #btn-line-width, #btn-num-rot, #btn-flip-switch {
   font-size: 100%;
 }
 
@@ -176,56 +203,13 @@ input[type=checkbox] {
   bottom: 15px;
 }
 
+/*
 .a2a_kit {
   padding: 4rem;
   float: right;
 }
 
-/*
-.icon-holder-heading {
-  text-align: left;
-  font-family: 'Montserrat', sans-serif;
-  color: #dd2581;
-  font-size: 90%;
-}
-*/
-
-/*
-.fa-twitter {
-  margin-left: 1.5rem;
-  padding-top: 5rem;
-  color: #1b95e0;
-  transition: 0.5s
-}
-
-.fa-twitter:hover {
-  color: #77cbff;
-}
-*/
-
-/*
-.heart {
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  display: inline-block;
-  width: 90%;
-  text-align: center;
-  color: #818181;
-  color: white;
-  transition: 0.5s
-}
-
-.heart:hover {
-  color: red;
-}
-*/
 .user-settings {
   display: inline-block;
   width: 60%;
-
-/*
-
-.light {
-  color: #111;
-}
 */

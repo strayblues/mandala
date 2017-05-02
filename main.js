@@ -20,10 +20,17 @@ window.onbeforeunload = function (e) {
 // DO EVERYTHING
 $(function(){
 
+  var mobile_flag = true;
+  if (!(/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()))) {
+    mobile_flag = false;
+  }
+
 var canvas, ctx, flag = false,
     prevCoords = [0,0],
     currCoords = [0,0],
-    dot_flag = false;
+    dot_flag = false,
+    w,
+    h;
 
 
 // localStorage settings
@@ -90,90 +97,113 @@ function drawBoard(){
 
 function init() {
 
-    // Create and display a canvas element
-    canvas = document.getElementById('myMandala');
+  // Create and display canvas for either desktop or mobile device
+  function setCanvasSize(){
+    if (mobile_flag){
+      canvas = document.getElementById('mobile-canvas');
+      $('#desktop').hide();
+      if (window.innerWidth < window.innerHeight) {
+        canvas.height = window.innerWidth;
+        canvas.width = window.innerWidth;
+      }
+      else {
+        canvas.height = window.innerHeight - $('#menu').height();
+        canvas.width = window.innerHeight  - $('#menu').height();
+      }
+    }
+    else {
+      canvas = document.getElementById('desktop-canvas');
+      $('#mobile').hide();
+      canvas.height = window.innerHeight-35;
+      canvas.width = window.innerHeight-35;
+    }
     ctx = canvas.getContext("2d");
-
-    canvas.height = window.innerHeight-35;
-    canvas.width = window.innerHeight-35;
     w = canvas.width;
     h = canvas.height;
+  }
 
-    // Pre-paint canvas so it has white bg on save
-    paintWhite();
+  setCanvasSize();
 
-    // Drow bg grid
-    drawBoard();
 
-    // Handle mouse/touch events
-    $('canvas').on('mousemove', function (e) {
-        onMouseMove(e.clientX, e.clientY);
+  // Pre-paint canvas so it has white bg on save
+  paintWhite();
+
+
+  // Drow bg grid
+  drawBoard();
+
+
+  // Handle mouse/touch events
+  $('canvas').on('mousemove', function (e) {
+      onMouseMove(e.clientX, e.clientY);
+  });
+  $('canvas').on('touchmove', function (e) {
+      e.preventDefault();
+      onMouseMove(e.targetTouches[0].clientX, e.targetTouches[0].clientY);
+  });
+
+  $('canvas').on('mousedown', function (e) {
+      handleMouseDown(e.clientX, e.clientY);
+  });
+  $('canvas').on('touchstart', function (e) {
+      e.preventDefault();
+      handleMouseDown(e.targetTouches[0].clientX, e.targetTouches[0].clientY);
+  });
+
+  $('canvas').on('mouseup mouseout', function (e) {
+      stopDrawing();
+  });
+  $('canvas').on('touchend touchcancel', function (e) {
+      e.preventDefault();
+      stopDrawing();
+  });
+
+  // The Spectrum color picker selection palette
+  $(".selectionPalette").spectrum({
+      showPalette: true,
+      color: settings.currentColor.get(),
+      chooseText: "Save color",
+      palette: [ ],
+      showSelectionPalette: true, // true by default
+      selectionPalette: [ ],
+      change: function(color){
+        settings.currentColor.set(color.toHexString());
+      },
+      move: function(color){
+        settings.currentColor.set(color.toHexString());
+      }
+  });
+
+  // Hide Spectrum color picker when mouse leaves the selection palette
+  $(".sp-container").mouseleave(function () {
+    $(".selectionPalette").spectrum("hide");
+  });
+
+  // Handle download of an image file of the canvas
+  // No support for some iOS devices at this point
+  // Some iPhone users may need jpg format
+  $('#btn-download').click(function () {
+    // TODO Change ID to class for both mobile and desktop canvases
+    document.getElementById("myMandala").toBlob(function(blob) {
+      saveAs(blob, 'Mandala.jpg');
     });
-    $('canvas').on('touchmove', function (e) {
-        e.preventDefault();
-        onMouseMove(e.targetTouches[0].clientX, e.targetTouches[0].clientY);
-    });
+  });
 
-    $('canvas').on('mousedown', function (e) {
-        handleMouseDown(e.clientX, e.clientY);
-    });
-    $('canvas').on('touchstart', function (e) {
-        e.preventDefault();
-        handleMouseDown(e.targetTouches[0].clientX, e.targetTouches[0].clientY);
-    });
+  // Clear the canvas
+  $('#btn-clear').click(clear);
 
-    $('canvas').on('mouseup mouseout', function (e) {
-        stopDrawing();
-    });
-    $('canvas').on('touchend touchcancel', function (e) {
-        e.preventDefault();
-        stopDrawing();
-    });
+  // read lineWidth from localStorage
+  $('#line-width').val(settings.lineWidth.get());
 
-    // The Spectrum color picker selection palette
-    $("#selectionPalette").spectrum({
-        showPalette: true,
-        color: settings.currentColor.get(),
-        chooseText: "Save color",
-        palette: [ ],
-        showSelectionPalette: true, // true by default
-        selectionPalette: [ ],
-        change: function(color){
-          settings.currentColor.set(color.toHexString());
-        },
-        move: function(color){
-          settings.currentColor.set(color.toHexString());
-        }
-    });
+  // Read rotations-num from localStorage
+  $('#rotations-num').val(settings.rotationsNum.get());
 
-    // Hide Spectrum color picker when mouse leaves the selection palette
-    $(".sp-container").mouseleave(function () {
-      $("#selectionPalette").spectrum("hide");
-    });
-
-    // Handle download of an image file of the canvas
-    // No support for some iOS devices at this point
-    // Some iPhone users may need jpg format
-    $('#btn-download').click(function () {
-      document.getElementById("myMandala").toBlob(function(blob) {
-        saveAs(blob, 'Mandala.jpg');
-      });
-    });
-
-    // Clear the canvas
-    $('#btn-clear').click(clear);
-
-    // read lineWidth from localStorage
-    $('#line-width').val(settings.lineWidth.get());
-
-    // Read rotations-num from localStorage
-    $('#rotations-num').val(settings.rotationsNum.get());
-
-    // Read do-reflect from localStorage
-    $('#do-reflect').attr(settings.doReflect.get());
+  // Read do-reflect from localStorage
+  $('#do-reflect').attr(settings.doReflect.get());
 }
 
 init();
+
 
 // Let user set brush size
 // This will get rewritten at some point
