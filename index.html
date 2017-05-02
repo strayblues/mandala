@@ -43,41 +43,29 @@
 <div id="desktop">
 
   <div class="sidenav leftnav">
-    <div class="row">
+    <div class="my-row">
       <div class="color-picker row-item row-item-1">
-        <a id="btn-color-desk">Color <br/>
-          <input type='text' class="selectionPalette" /></a>
+        <a id="btn-color-desk">Color <br/><input type='text' class="selectionPalette" /></a>
       </div>
-      <div id="set-line-width" class="row-item">
-        <a id="btn-line-width">Size <i class="fa fa-pencil"
-            aria-hidden="true"></i><br/>
-          <input type="number"
-                  min="1"
-                  id="line-width"
-                  value="2"></a>
+      <div id="set-line-width" class="row-item"><a id="btn-line-width">Size <i class="fa fa-pencil"
+            aria-hidden="true"></i><br/><input type="number" min="1" id="line-width" value="2"></a>
       </div>
     </div>
-    <div class="row">
+    <div class="my-row">
       <div class="row-item row-item-1">
-        <a id="btn-num-rot">Lines: <br/>
-          <input type="number"
-                id="rotations-num"
-                min="2"
-                value="5"><br/></a>
+        <a id="btn-num-rot">Lines <br/><input type="number" id="rotations-num" min="2" value="5"><br/></a>
       </div>
       <div class="row-item">
-        <a id="btn-flip-switch">Double?
-          <input type="checkbox"
-                id="do-reflect"
-                checked="true"></a>
+        <a id="btn-flip-switch">Double? <input type="checkbox" id="do-reflect" checked="true"></a>
       </div>
     </div>
+
     <div class="lower-buttons">
-      <a id="btn-download"><i class="fa fa-save" aria-hidden="true"></i> Save</a>
-      <a id="btn-print" onclick="print()"><i class="fa fa-print"
-          aria-hidden="true"></i> Print</a>
+      <a id="btn-download"><button type="button" class="btn btn-primary"><i class="fa fa-save" aria-hidden="true"></i> Save</button></a>
+      <a id="btn-print" onclick="print()"><button type="button" class="btn btn-success"><i class="fa fa-print"
+          aria-hidden="true"></i> Print</button></a>
       <hr>
-      <a id="btn-clear"><i class="fa fa-trash" aria-hidden="true"></i> Clear</a>
+      <a id="btn-clear"><button type="button" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Clear</button></a>
     </div>
   </div>
 
@@ -126,13 +114,13 @@
       </div>
 
       <div id="menu">
-        <div class="buttons">
+        <div class="buttons btn-mobile">
           <a id="btn-color" class="color-picker"><button type="button" class="btn btn-default">Color: <span class="color-picker"><input type='text' class="selectionPalette" /></span></button></a>
           <a id="set-line-width"><button type="button" class="btn btn-default">Size: <input type="number" min="1" id="line-width" value="1" onclick="this.select()"></button></a>
           <a id="btn-num-rot"><button type="button" class="btn btn-default">Lines: <input type="number" id="rotations-num" min="0" value="6" onclick="this.select()"></button></a>
           <a id="btn-flip-switch"><button type="button" class="btn btn-default">Double: <input type="checkbox" id="do-reflect" checked="true"></button></a>
           <a id="btn-download"><button type="button" class="btn btn-default">Save <i class="fa fa-save" aria-hidden="true"></i></button></a>
-          <a id="btn-clear"><button type="button" class="btn btn-danger">Clear <i class="fa fa-trash" aria-hidden="true"></i></button></a>
+          <a id="btn-clear"><button type="button" class="btn btn-warning">Clear <i class="fa fa-trash" aria-hidden="true"></i></button></a>
         </div>
         <div class="social">
           <div class="fb-share-button" data-href="http://mandala.hagarsh.com" data-layout="button" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fmandala.hagarsh.com%2F&amp;src=sdkpreparse">Share</a></div>

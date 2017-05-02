@@ -1,29 +1,3 @@
-@media only screen and (max-width : 768px) {
-  /* For MOBILE */
-.social {
-  margin-right: -2px;
-  margin-top: 0.5rem;
-  text-align: center;
- }
-
-.buttons {
-  margin-left: 4px;
-  margin-right: -4px;
-}
-
-.btn {
-  width: 32%;
-  margin-top: 2px;
-  margin-bottom: 2px;
-}
-
-.btn {
-
-}
-
-
-}
-
 @media print {
   .sidenav {
     display: none;
@@ -44,27 +18,32 @@
 
 body {
   font-family: 'Varela Round', sans-serif;
+  box-sizing: content-box !important;
 }
 
 body, .sidenav, #main, html, #menu {
   background-color: #c3c3c3; // light gray
 }
 
+#desktop {
+  margin: 8px;
+}
+
 #menu {
   margin-top: -5px;
 }
-
-.desktopCanvas, .mobileCanvas {
+/*
+.desktop-canvas, .mobile-canvas {
   background-color: white;
   display: inline;
   cursor: url('cursor-pencil.png'), cell;
 }
-
-.btn-default, .btn-danger {
+*/
+.btn-default, .btn-warning {
   border-color: #666 !important;
 }
 
-.btn-danger {
+.btn-warning {
   background-color: #888 !important;
 }
 
@@ -102,14 +81,14 @@ body, .sidenav, #main, html, #menu {
 * Color of text buttons
 */
  .leftnav a {
-   color: #415caa;
+   color: #415caa !important;
  }
 .leftnav a:hover, .offcanvas a:focus {
-    color: #2b8eff;
+    color: #2b8eff !important;
 }
 
 .icon-holder a:hover {
-  color: #666;
+  color: #666 !important;
 }
 
 #main {
@@ -135,11 +114,7 @@ body, .sidenav, #main, html, #menu {
   transition: 0.5s;
   color: #dd2581; // pink
   margin-left: 0.5rem;
-}
-
-.top-links {
-  margin-top: 0.5rem;
-  text-align: center;
+  padding: 0.25rem;
 }
 
 #line-width, #rotations-num, input[type=checkbox]{
@@ -148,7 +123,7 @@ body, .sidenav, #main, html, #menu {
 
 input {
     text-align: center;
-/*    font-size: 10pt;*/
+    font-size: 10pt;
 }
 
 input[type=checkbox] {
@@ -166,7 +141,6 @@ input[type=checkbox] {
   border-color: #F0C49B;
 }
 
-
 #btn-clear {
   color: #a31a1a;
 }
@@ -179,7 +153,7 @@ input[type=checkbox] {
   font-size: 100%;
 }
 
-.row {
+.my-row {
   width: 100%;
   margin: 0 auto;
   display: inline-block;
@@ -188,13 +162,13 @@ input[type=checkbox] {
 }
 
 .row-item {
-  width: 48%;
+  width: 46%;
   float: left;
   display: inline-block;
 }
 
 .row-item-1 {
-  border-right: solid #c3c3c3 0.25rem;
+  border-right: solid #c3c3c3 0.5rem;
   border-left: solid #c3c3c3 0.25rem;
 }
 
@@ -203,13 +177,20 @@ input[type=checkbox] {
   bottom: 15px;
 }
 
-/*
-.a2a_kit {
-  padding: 4rem;
-  float: right;
+/* For MOBILE */
+.social {
+margin-right: -2px;
+margin-top: 0.5rem;
+text-align: center;
 }
 
-.user-settings {
-  display: inline-block;
-  width: 60%;
-*/
+.buttons {
+margin-left: 4px;
+margin-right: -4px;
+}
+
+.btn-mobile {
+width: 32%;
+margin-top: 2px;
+margin-bottom: 2px;
+}
