@@ -58,7 +58,7 @@ var settings = {
 };
 
 
-$("#do-reflect").change(function() {
+$(".do-reflect").change(function() {
   if(this.checked) {
       settings.doReflect.set(true);
     }
@@ -193,27 +193,26 @@ function init() {
   $('#btn-clear').click(clear);
 
   // read lineWidth from localStorage
-  $('#line-width').val(settings.lineWidth.get());
+  $('.line-width').val(settings.lineWidth.get());
 
   // Read rotations-num from localStorage
-  $('#rotations-num').val(settings.rotationsNum.get());
+  $('.rotations-num').val(settings.rotationsNum.get());
 
   // Read do-reflect from localStorage
-  $('#do-reflect').attr(settings.doReflect.get());
+  $('.do-reflect').attr(settings.doReflect.get());
 }
 
 init();
 
 
 // Let user set brush size
-// This will get rewritten at some point
-$(":input").bind('keyup mouseup', function () {
-  settings.lineWidth.set($('#line-width').val());
+$(".line-width").bind('keyup mouseup', function () {
+  settings.lineWidth.set($(this).val());
 });
 
-//NEW Allow the user to change the number of rotations
-$(":input").bind('keyup mouseup', function () {
-  settings.rotationsNum.set($('#rotations-num').val()); //NEW
+//Allow user to change the number of rotations
+$(".rotations-num").bind('keyup mouseup', function () {
+  settings.rotationsNum.set($(this).val());
 });
 
 
