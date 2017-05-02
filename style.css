@@ -1,3 +1,11 @@
+#desktop, #mobile {
+  display: none;
+}
+
+#desktop {
+  margin: 8px;
+}
+
 @media print {
   .sidenav {
     display: none;
@@ -23,10 +31,6 @@ body {
 
 body, .sidenav, #main, html, #menu {
   background-color: #c3c3c3; // light gray
-}
-
-#desktop {
-  margin: 8px;
 }
 
 #menu {

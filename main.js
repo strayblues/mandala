@@ -63,9 +63,9 @@ $(".do-reflect").change(function() {
       settings.doReflect.set(true);
     }
   else {
-    // Silly hack, meant to fix a bug quickly. I pass an empty string instead of
+    // Silly hack to fix a bug quickly. I pass an empty string instead of
     // the boolean value false, because localStorage converts everything into
-    // string, so the problem is that it reads 'false' as a non-empty string,
+    // string, which means it reads 'false' as a non-empty string,
     // which absurdly makes its boolean value TRUE (badness ensues).
       settings.doReflect.set('');
   }
@@ -101,7 +101,7 @@ function init() {
   function setCanvasSize(){
     if (mobile_flag){
       canvas = document.getElementById('mobile-canvas');
-      $('#desktop').hide();
+      $('#mobile').show();
       if (window.innerWidth < window.innerHeight) {
         canvas.height = window.innerWidth;
         canvas.width = window.innerWidth;
@@ -113,7 +113,7 @@ function init() {
     }
     else {
       canvas = document.getElementById('desktop-canvas');
-      $('#mobile').hide();
+      $('#desktop').show();
       canvas.height = window.innerHeight-35;
       canvas.width = window.innerHeight-35;
     }
@@ -190,7 +190,7 @@ function init() {
   });
 
   // Clear the canvas
-  $('#btn-clear').click(clear);
+  $('.btn-clear').click(clear);
 
   // read lineWidth from localStorage
   $('.line-width').val(settings.lineWidth.get());
