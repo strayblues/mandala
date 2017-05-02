@@ -22,7 +22,7 @@ $(function(){
 
   var mobile_flag = true;
   if (!(/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()))) {
-    mobile_flag = true; // TODO Change back to false when done testing
+    mobile_flag = false; // TODO Change back to false when done testing
   }
 
 var canvas, ctx, flag = false,
@@ -182,11 +182,23 @@ function init() {
   // Handle download of an image file of the canvas
   // No support for some iOS devices at this point
   // Some iPhone users may need jpg format
-  $('#btn-download').click(function () {
-    // TODO Change ID to class for both mobile and desktop canvases
-    document.getElementById("myMandala").toBlob(function(blob) {
-      saveAs(blob, 'Mandala.jpg');
-    });
+  $('.btn-download').click(function () {
+    if (mobile_flag) {
+      document.getElementById("mobile-canvas").toBlob(function(blob) {
+        saveAs(blob, 'Mandala.jpg');
+      });
+    }
+      else {
+        document.getElementById("desktop-canvas").toBlob(function(blob) {
+          saveAs(blob, 'Mandala.jpg');
+          });
+      }
+  });
+
+  //TODO try this for creating a URL
+  $('.btn-url').click(function () {
+    var dataURL = canvas.toDataURL();
+    alert(dataURL);
   });
 
   // Clear the canvas
