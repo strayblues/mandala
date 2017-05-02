@@ -100,12 +100,17 @@ body, .sidenav, #main, html, #menu {
     padding-left: 13rem;
 }
 
+.top-links {
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
 .twitter-buttons {
   margin-top: 0.5rem;
 }
 
 .twitter-buttons, .fb-like {
-  text-align: center;
+  text-align: center !important;
 }
 
 .icon-holder {
@@ -194,7 +199,7 @@ margin-right: -4px;
 }
 
 .btn-mobile {
-width: 22%;
+width: 23%;
 margin-top: 2px;
 margin-bottom: 2px;
 }
