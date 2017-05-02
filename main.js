@@ -22,7 +22,7 @@ $(function(){
 
   var mobile_flag = true;
   if (!(/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()))) {
-    mobile_flag = false;
+    mobile_flag = true; // TODO Change back to false when done testing
   }
 
 var canvas, ctx, flag = false,
