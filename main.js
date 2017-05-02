@@ -195,11 +195,13 @@ function init() {
       }
   });
 
+/*
   //TODO try this for creating a URL
   $('.btn-url').click(function () {
     var dataURL = canvas.toDataURL();
     alert(dataURL);
   });
+*/
 
   // Clear the canvas
   $('.btn-clear').click(clear);
