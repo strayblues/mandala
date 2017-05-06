@@ -2,17 +2,13 @@
   display: none;
 }
 
-#desktop {
-  margin: 8px;
+#mobile {
+  margin: -8px;
 }
 
 @media print {
   .sidenav, .leftnav, .top-links, .icon-holder {
-    display: none !important;
-  }
-
-  #main {
-    padding-left: 0 !important;
+    display: none;
   }
 
   canvas {
@@ -31,34 +27,30 @@
 
 body {
   font-family: 'Varela Round', sans-serif;
-  box-sizing: content-box !important;
+  box-sizing: content-box;
 }
 
 body, .sidenav, #main, html, #menu {
-  background-color: #c3c3c3 !important; // light gray
+  background-color: #c3c3c3; // light gray
 }
 
-#menu {
-  margin-top: -5px;
-}
-/*
 .desktop-canvas, .mobile-canvas {
-  background-color: white;
-  display: inline;
+/*  background-color: white;
+  display: inline;*/
   cursor: url('cursor-pencil.png'), cell;
 }
-*/
+
 .btn-default, .btn-warning {
-  border-color: #666 !important;
+  border-color: #666;
 }
 
 .btn-warning {
-  background-color: #888 !important;
+  background-color: #888;
 }
 
 .btn {
-    background-color: #222;
-/*    border: 1 solid;*/
+/*    background-color: #222;
+    border: 1 solid;*/
     border-radius: 6px;
     color: white;
     padding: 12px 24px;
@@ -69,14 +61,14 @@ body, .sidenav, #main, html, #menu {
 }
 
 .btn-mobile {
-  background-color: #bbb !important;
-  border-color: #b1b1b1 !important;
+  background-color: #bbb;
+  border-color: #b1b1b1;
   padding: 10px 2px;
   color: #444;
   font-size: 13pt;
   border-radius: 10px;
-  margin-top: 2px;
-  margin-bottom: 2px;
+  margin-top: 3px;
+  margin-bottom: 3px;
   width: 32%;
   border-width: 0.25px;
 }
@@ -105,16 +97,14 @@ body, .sidenav, #main, html, #menu {
   background-color: #bc4340;
 }
 
-
 .social {
 margin-right: -2px;
-margin-top: 0.5rem;
+margin-top: 1rem;
 text-align: center;
 }
 
 .buttons {
-margin-left: 4px;
-margin-right: -4px;
+margin-left: 8px;
 }
 
 .sidenav {
@@ -150,15 +140,15 @@ margin-right: -4px;
 /**
 * Color of text buttons
 */
- .leftnav a {
-   color: #415caa !important;
+.leftnav a {
+   color: #415caa;
  }
 .leftnav a:hover, .offcanvas a:focus {
-    color: #2b8eff !important;
+    color: #2b8eff;
 }
 
 .icon-holder a:hover {
-  color: #666 !important;
+  color: #666;
 }
 
 #main {
@@ -176,7 +166,7 @@ margin-right: -4px;
 }
 
 .twitter-buttons, .fb-like {
-  text-align: center !important;
+  text-align: center;
 }
 
 .icon-holder {
