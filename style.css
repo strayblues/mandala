@@ -7,9 +7,14 @@
 }
 
 @media print {
-  .sidenav {
-    display: none;
+  .sidenav, .leftnav, .top-links, .icon-holder {
+    display: none !important;
   }
+
+  #main {
+    padding-left: 0 !important;
+  }
+
   canvas {
     padding: 0;
     margin: auto;
@@ -30,7 +35,7 @@ body {
 }
 
 body, .sidenav, #main, html, #menu {
-  background-color: #c3c3c3; // light gray
+  background-color: #c3c3c3 !important; // light gray
 }
 
 #menu {
@@ -49,6 +54,67 @@ body, .sidenav, #main, html, #menu {
 
 .btn-warning {
   background-color: #888 !important;
+}
+
+.btn {
+    background-color: #222;
+/*    border: 1 solid;*/
+    border-radius: 6px;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14pt;
+}
+
+.btn-mobile {
+  background-color: #bbb !important;
+  border-color: #b1b1b1 !important;
+  padding: 10px 2px;
+  color: #444;
+  font-size: 13pt;
+  border-radius: 10px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  width: 32%;
+  border-width: 0.25px;
+}
+
+.btn-primary {
+  background-color: #5cb85c;
+}
+
+.btn-primary:hover {
+  background-color: #4a9b4a;
+}
+
+.btn-print {
+  background-color: #e0a541;
+}
+
+.btn-print:hover {
+  background-color: #bf8a31;
+}
+
+.btn-danger {
+  background-color: #d9534f;
+}
+
+.btn-danger:hover {
+  background-color: #bc4340;
+}
+
+
+.social {
+margin-right: -2px;
+margin-top: 0.5rem;
+text-align: center;
+}
+
+.buttons {
+margin-left: 4px;
+margin-right: -4px;
 }
 
 .sidenav {
@@ -184,22 +250,4 @@ input[type=checkbox] {
 .lower-buttons {
   position: absolute;
   bottom: 15px;
-}
-
-/* For MOBILE */
-.social {
-margin-right: -2px;
-margin-top: 0.5rem;
-text-align: center;
-}
-
-.buttons {
-margin-left: 4px;
-margin-right: -4px;
-}
-
-.btn-mobile {
-width: 23%;
-margin-top: 2px;
-margin-bottom: 2px;
 }

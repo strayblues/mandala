@@ -17,6 +17,15 @@ window.onbeforeunload = function (e) {
 };
 
 
+// Hide address bar on mobile devices
+window.addEventListener("load",function() {
+  setTimeout(function(){
+      // This hides the address bar:
+      window.scrollTo(0, 1);
+  }, 0);
+});
+
+
 // DO EVERYTHING
 $(function(){
 
@@ -158,13 +167,17 @@ function init() {
       stopDrawing();
   });
 
-  // The Spectrum color picker selection palette
+  // Color picker selection palette
   $(".selectionPalette").spectrum({
       showPalette: true,
+      maxSelectionSize: 100,
+      togglePaletteOnly: true,
+      showInitial: true,
       color: settings.currentColor.get(),
       chooseText: "Save color",
       palette: [ ],
       showSelectionPalette: true, // true by default
+      hideAfterPaletteSelect:true,
       selectionPalette: [ ],
       change: function(color){
         settings.currentColor.set(color.toHexString());
@@ -174,10 +187,11 @@ function init() {
       }
   });
 
-  // Hide Spectrum color picker when mouse leaves the selection palette
+  // Hide color picker when mouse leaves the selection palette
   $(".sp-container").mouseleave(function () {
     $(".selectionPalette").spectrum("hide");
   });
+
 
   // Handle download of an image file of the canvas
   // No support for some iOS devices at this point
