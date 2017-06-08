@@ -2,6 +2,7 @@
 * @author Hagar Shilo <strayblues@gmail.com>
 */
 
+"use strict";
 
 // Prevent user from accidentally closing the window
 window.onbeforeunload = function (e) {

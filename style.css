@@ -2,10 +2,6 @@
   display: none;
 }
 
-#mobile {
-  margin: -8px;
-}
-
 @media print {
   .sidenav, .leftnav, .top-links, .icon-holder {
     display: none;
@@ -27,7 +23,7 @@
 
 body {
   font-family: 'Varela Round', sans-serif;
-  box-sizing: content-box;
+  /*box-sizing: content-box;*/
 }
 
 body, .sidenav, #main, html, #menu {
@@ -101,10 +97,6 @@ body, .sidenav, #main, html, #menu {
 margin-right: -2px;
 margin-top: 1rem;
 text-align: center;
-}
-
-.buttons {
-margin-left: 8px;
 }
 
 .sidenav {
@@ -188,7 +180,7 @@ margin-left: 8px;
 
 input {
     text-align: center;
-    font-size: 10pt;
+    font-size: 12pt;
 }
 
 input[type=checkbox] {
