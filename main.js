@@ -146,11 +146,11 @@ function init() {
 
   // Handle mouse/touch events
   $('canvas').on('mousemove', function (e) {
-      onMouseMove(e.clientX, e.clientY);
+      handleMouseMove(e.clientX, e.clientY);
   });
   $('canvas').on('touchmove', function (e) {
       e.preventDefault();
-      onMouseMove(e.targetTouches[0].clientX, e.targetTouches[0].clientY);
+      handleMouseMove(e.targetTouches[0].clientX, e.targetTouches[0].clientY);
   });
 
   $('canvas').on('mousedown', function (e) {
@@ -422,7 +422,7 @@ function stopDrawing() {
   flag = false;
 }
 
-function onMouseMove(x, y) {
+function handleMouseMove(x, y) {
   if (flag) {
       prevCoords = currCoords;
       currCoords = eventToCanvasCoords(x, y);
