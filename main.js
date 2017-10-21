@@ -4,28 +4,6 @@
 
 "use strict";
 
-// Prevent user from accidentally closing the window
-window.onbeforeunload = function (e) {
-    e = e || window.event;
-
-    // For Crome, IE and Firefox prior to version 4
-    if (e) {
-        e.returnValue = 'Sure?';
-    }
-
-    // For Safari
-    return 'Sure?';
-};
-
-
-// Hide address bar on mobile devices
-window.addEventListener("load",function() {
-  setTimeout(function(){
-      // This hides the address bar:
-      window.scrollTo(0, 1);
-  }, 0);
-});
-
 
 // DO EVERYTHING
 $(function(){
@@ -106,6 +84,29 @@ function drawBoard(){
 
 
 function init() {
+
+  // Prevent user from accidentally closing the window
+  window.onbeforeunload = function (e) {
+      e = e || window.event;
+
+      // For Crome, IE and Firefox prior to version 4
+      if (e) {
+          e.returnValue = 'Sure?';
+      }
+
+      // For Safari
+      return 'Sure?';
+  };
+
+
+  // Hide address bar on mobile devices
+  window.addEventListener("load",function() {
+    setTimeout(function(){
+        // This hides the address bar:
+        window.scrollTo(0, 1);
+    }, 0);
+  });
+
 
   // Create and display canvas for either desktop or mobile device
   function setCanvasSize(){
