@@ -1,39 +1,33 @@
+* {
+
+}
+
 #desktop, #mobile {
   display: none;
 }
 
-@media print {
-  .sidenav, .leftnav, .top-links, .icon-holder {
-    display: none;
-  }
-
-  canvas {
-    padding: 0;
-    margin: auto;
-    display: block;
-    position: absolute;
-    width: 800px;
-    height: 800px;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-}
-
 body {
+  margin: 0;
   font-family: 'Varela Round', sans-serif;
-  /*box-sizing: content-box;*/
 }
 
 body, .sidenav, #main, html, #menu {
   background-color: #c3c3c3; // light gray
 }
 
+.wrapper {
+  box-sizing: border-box;
+}
+
 .desktop-canvas, .mobile-canvas {
 /*  background-color: white;
   display: inline;*/
   cursor: url('cursor-pencil.png'), cell;
+}
+
+#mobile-canvas {
+  margin-top: 15px;
+  margin-left: 15px;
 }
 
 .btn-default, .btn-warning {
@@ -49,7 +43,7 @@ body, .sidenav, #main, html, #menu {
     border: 1 solid;*/
     border-radius: 6px;
     color: white;
-    padding: 8px 18px;
+    padding: 12px 24px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -145,7 +139,8 @@ text-align: center;
 
 #main {
     transition: margin-left 0.5s;
-    padding-left: 13rem;
+    padding-left: 13.5rem;
+    padding-top: 0.5rem;
 }
 
 .top-links {
@@ -232,4 +227,24 @@ input[type=checkbox] {
 .lower-buttons {
   position: absolute;
   bottom: 15px;
+}
+
+
+@media print {
+  .sidenav, .leftnav, .top-links, .icon-holder {
+    display: none;
+  }
+
+  canvas {
+    padding: 0;
+    margin: auto;
+    display: block;
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 }

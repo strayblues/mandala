@@ -114,8 +114,7 @@ function init() {
       canvas = document.getElementById('mobile-canvas');
       $('#mobile').show();
       if (window.innerWidth < window.innerHeight) {
-        canvas.height = window.innerWidth;
-        canvas.width = window.innerWidth;
+        canvas.width = canvas.height = window.innerWidth - 30;
       }
       else {
         canvas.height = window.innerHeight - $('#menu').height();
