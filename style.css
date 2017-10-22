@@ -232,11 +232,13 @@ input[type=checkbox] {
   flex-wrap: wrap;
   flex-direction: row;
 }
+
 .grid2x2 > div {
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
+
 .grid2x2 > div > div {
   display: flex;
   justify-content: center;
@@ -254,6 +256,8 @@ input[type=checkbox] {
 
 .box:hover {
   transform: scale(1.1);
+  transition: transform 0.25s ease-in-out;
+
 }
 
 .lower-buttons {
