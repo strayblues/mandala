@@ -35,7 +35,8 @@
 <div id="desktop">
 
   <div class="sidenav leftnav">
-    <div class="my-row">
+
+    <!-- <div class="my-row">
       <div class="color-picker row-item row-item-1">
         <a id="btn-color-desk">Color <br/><input type='text' class="selectionPalette" /></a>
       </div>
@@ -50,7 +51,24 @@
       <div class="row-item">
         <a id="btn-flip-switch">Double? <input type="checkbox" class="do-reflect" checked="true"></a>
       </div>
+    </div> -->
+
+    <div class="grid2x2">
+      <div class="box box1"><div>
+        <a id="btn-color-desk">Color <br/><input type='text' class="selectionPalette" /></a>
+      </div></div>
+      <div class="box box2"><div>
+        <a id="btn-line-width">Size <i class="fa fa-pencil"
+              aria-hidden="true"></i><br/><input type="number" min="1" class="line-width" value="2"></a>
+      </div></div>
+      <div class="box box3"><div>
+        <a id="btn-num-rot">Lines <br/><input type="number" class="rotations-num" min="2" value="5"><br/></a>
+      </div></div>
+      <div class="box box4"><div>
+        <a id="btn-flip-switch">Double? <br><input type="checkbox" class="do-reflect" checked="true"></a>
+      </div></div>
     </div>
+
 
     <div class="lower-buttons">
       <a class="btn-download"><button type="button" class="btn btn-primary"><i class="fa fa-save" aria-hidden="true"></i> Save</button></a>
@@ -62,7 +80,7 @@
       <hr>
       <a class="btn-clear"><button type="button" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Clear</button></a>
     </div>
-  </div>
+  </div> <!-- END leftnav -->
 
   <div id="main">
     <canvas id="desktop-canvas" width="600" height="600">

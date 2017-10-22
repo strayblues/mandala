@@ -116,7 +116,7 @@ text-align: center;
 }
 
 .leftnav a {
-    padding: 1rem;
+    padding: 0.5rem;
     text-decoration: none;
     font-size: 125%;
     display: block;
@@ -224,11 +224,42 @@ input[type=checkbox] {
   border-left: solid #c3c3c3 0.25rem;
 }
 
+.grid2x2 {
+  margin-left: 6px;
+  min-width: 90px;
+  min-height: 90px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.grid2x2 > div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.grid2x2 > div > div {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.box {
+  width: 47%;
+  margin: 3px;
+  background-color: #ddd;
+  border-radius: 3px;
+  box-shadow: 3px 3px 1px #999;
+
+}
+
+.box:hover {
+  transform: scale(1.1);
+}
+
 .lower-buttons {
   position: absolute;
   bottom: 15px;
 }
-
 
 @media print {
   .sidenav, .leftnav, .top-links, .icon-holder {
