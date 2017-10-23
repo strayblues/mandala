@@ -7,11 +7,12 @@
 
 // DO EVERYTHING
 $(function(){
-
+/*
   var mobile_flag = true;
   if (!(/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()))) {
     mobile_flag = false; // TODO Change back to false when done testing
   }
+*/
 
 var canvas, ctx, flag = false,
     prevCoords = [0,0],
@@ -89,7 +90,7 @@ function init() {
 
   // Create and display canvas for either desktop or mobile device
   function setCanvasSize(){
-    if (mobile_flag){
+    if (isMobile() === true){
       canvas = document.getElementById('mobile-canvas');
       $('#mobile').show();
       if (window.innerWidth < window.innerHeight) {
@@ -177,16 +178,16 @@ function init() {
   // No support for some iOS devices at this point
   // Some iPhone users may need jpg format
   $('.btn-download').click(function () {
-    if (mobile_flag) {
+    if (isMobile() === true) {
       document.getElementById("mobile-canvas").toBlob(function(blob) {
         saveAs(blob, 'Mandala.jpg');
       });
     }
-      else {
-        document.getElementById("desktop-canvas").toBlob(function(blob) {
-          saveAs(blob, 'Mandala.jpg');
-          });
-      }
+    else {
+      document.getElementById("desktop-canvas").toBlob(function(blob) {
+        saveAs(blob, 'Mandala.jpg');
+      });
+    }
   });
 
 /*
