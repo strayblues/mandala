@@ -20,9 +20,9 @@ function fixMobileSpectrumDisplay(){
 */ // Not sure this does anything
 
 
-function isMobile(device){
+function isMobile(){
   if (!(/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()))) {
-    return false; // TODO Change back to false when done testing
+    return false; 
   }
   else {
     return true;

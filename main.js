@@ -90,7 +90,7 @@ function init() {
 
   // Create and display canvas for either desktop or mobile device
   function setCanvasSize(){
-    if (isMobile() === true){
+    if (isMobile()){
       canvas = document.getElementById('mobile-canvas');
       $('#mobile').show();
       if (window.innerWidth < window.innerHeight) {
@@ -178,7 +178,7 @@ function init() {
   // No support for some iOS devices at this point
   // Some iPhone users may need jpg format
   $('.btn-download').click(function () {
-    if (isMobile() === true) {
+    if (isMobile()) {
       document.getElementById("mobile-canvas").toBlob(function(blob) {
         saveAs(blob, 'Mandala.jpg');
       });
