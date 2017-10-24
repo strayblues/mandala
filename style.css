@@ -15,6 +15,14 @@ body, .sidenav, #main, html, #menu {
   background-color: #c3c3c3; // light gray
 }
 
+button {
+  background-color: inherit;
+}
+
+.space-above {
+  margin-top: 1rem;
+}
+
 .wrapper {
   box-sizing: border-box;
 }
@@ -63,28 +71,8 @@ body, .sidenav, #main, html, #menu {
   border-width: 0.25px;
 }
 
-.btn-primary {
-  background-color: #5cb85c;
-}
-
-.btn-primary:hover {
-  background-color: #4a9b4a;
-}
-
-.btn-print {
-  background-color: #e0a541;
-}
-
-.btn-print:hover {
-  background-color: #bf8a31;
-}
-
-.btn-danger {
-  background-color: #d9534f;
-}
-
-.btn-danger:hover {
-  background-color: #bc4340;
+.btn-trash {
+  background-color: ;
 }
 
 .social {
@@ -129,6 +117,7 @@ text-align: center;
 .leftnav a {
    color: #415caa;
  }
+
 .leftnav a:hover, .offcanvas a:focus {
     color: #2b8eff;
 }
@@ -143,30 +132,28 @@ text-align: center;
     padding-top: 0.5rem;
 }
 
-.top-links {
+.links {
   margin-top: 0.5rem;
   text-align: center;
 }
 
-.twitter-buttons {
-  margin-top: 0.5rem;
-}
-
-.twitter-buttons, .fb-like {
+.fb-like {
   text-align: center;
 }
 
 .icon-holder {
   position: absolute;
   bottom: 55px;
-  transform: translateX(58%);
-
+  margin-left: 3px;
+  text-align: center;
+  transform: translateX(40%);
 }
+
 .icon-holder a {
   transition: 0.5s;
   color: #dd2581; // pink
-  margin-left: 0.5rem;
   padding: 0.25rem;
+  float: left;
 }
 
 .line-width, .rotations-num, input[type=checkbox]{
@@ -213,17 +200,6 @@ input[type=checkbox] {
   border-left: solid #c3c3c3 0.1rem;
 }
 
-.row-item {
-  width: 46%;
-  float: left;
-  display: inline-block;
-}
-
-.row-item-1 {
-  border-right: solid #c3c3c3 0.5rem;
-  border-left: solid #c3c3c3 0.25rem;
-}
-
 .grid2x2 {
   margin-left: 6px;
   min-width: 90px;
@@ -251,7 +227,11 @@ input[type=checkbox] {
   background-color: #ddd;
   border-radius: 3px;
   box-shadow: 3px 3px 1px #999;
+}
 
+.box-dark {
+  background-color: #aaa;
+  box-shadow: 3px 3px 1px #444;
 }
 
 .box:hover {
@@ -265,7 +245,7 @@ input[type=checkbox] {
 }
 
 @media print {
-  .sidenav, .leftnav, .top-links, .icon-holder {
+  .sidenav, .leftnav, .links, .icon-holder {
     display: none;
   }
 
