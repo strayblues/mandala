@@ -1,5 +1,5 @@
 // Prevent user from accidentally closing the window
-function askBeforeLeave(e){
+function warnBeforeLeave(e){
   e = e || window.event;
 
   // For Crome, IE and Firefox prior to version 4
@@ -22,7 +22,7 @@ function fixMobileSpectrumDisplay(){
 
 function isMobile(){
   if (!(/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()))) {
-    return false; 
+    return false;
   }
   else {
     return true;

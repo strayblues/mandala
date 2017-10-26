@@ -86,7 +86,7 @@ function drawBoard(){
 
 function init() {
 
-  window.onbeforeunload = askBeforeLeave;
+  window.onbeforeunload = warnBeforeLeave;
 
   // Create and display canvas for either desktop or mobile device
   function setCanvasSize(){
