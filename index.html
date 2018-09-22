@@ -36,24 +36,7 @@
 
   <div class="sidenav leftnav">
 
-    <!-- <div class="my-row">
-      <div class="color-picker row-item row-item-1">
-        <a id="btn-color-desk">Color <br/><input type='text' class="selectionPalette" /></a>
-      </div>
-      <div id="set-line-width" class="row-item"><a id="btn-line-width">Size <i class="fa fa-pencil"
-            aria-hidden="true"></i><br/><input type="number" min="1" class="line-width" value="2"></a>
-      </div>
-    </div>
-    <div class="my-row">
-      <div class="row-item row-item-1">
-        <a id="btn-num-rot">Lines <br/><input type="number" class="rotations-num" min="2" value="5"><br/></a>
-      </div>
-      <div class="row-item">
-        <a id="btn-flip-switch">Double? <input type="checkbox" class="do-reflect" checked="true"></a>
-      </div>
-    </div> -->
-
-    <div class="grid2x2">
+    <div class="grid2x2 top-buttons">
       <div class="box box1"><div>
         <a id="btn-color-desk">Color <br/><input type='text' class="selectionPalette" /></a>
       </div></div>
@@ -69,17 +52,13 @@
       </div></div>
     </div>
 
-
     <div class="lower-buttons">
       <a class="btn-download"><button type="button" class="btn btn-primary"><i class="fa fa-download" aria-hidden="true"></i> Save</button></a>
-<!--
-      <a class="btn-url"><button type="button" class="btn btn-primary"><i class="fa fa-link" aria-hidden="true"></i> Link</button></a>
--->
-      <a id="btn-print" onclick="print()"><button type="button" class="btn btn-print"><i class="fa fa-print"
-          aria-hidden="true"></i> Print</button></a>
+      <a id="btn-print" onclick="print()"><button type="button" class="btn btn-print"><i class="fa fa-print" aria-hidden="true"></i> Print</button></a>
       <hr>
       <a class="btn-clear"><button type="button" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Clear</button></a>
     </div>
+
   </div> <!-- END leftnav -->
 
   <div id="main">
@@ -89,7 +68,7 @@
   </div>
   <div class="nav sidenav rightnav">
     <!-- Social buttons -->
-    <div class="top-links">
+    <div class="social-links">
       <div class="fb-like"
             data-href="https://www.facebook.com/Mandala-1247769641955808/"
             data-width="70" data-layout="box_count" data-action="recommend"
@@ -105,7 +84,6 @@
                 charset="utf-8">
         </script>
       </div>
-
     </div>
 
     <!-- Me buttons -->
