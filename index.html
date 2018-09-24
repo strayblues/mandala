@@ -26,7 +26,7 @@
   <script src="main.js"></script>
   <script src="FileSaver.js"></script>
   <script src="canvas-to-blob.min.js"></script>
-  <script src="https://use.fontawesome.com/8f61b97be3.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script async src="https://static.addtoany.com/menu/page.js"></script>
 </head>
@@ -38,10 +38,10 @@
 
     <div class="grid2x2 top-buttons">
       <div class="box box1"><div>
-        <a id="btn-color-desk">Color <br/><input type='text' class="selectionPalette" /></a>
+        <a id="btn-color-desk">Color <i class="fa fa-palette" aria-hidden="true"></i><br/><input type='text' class="selectionPalette" /></a>
       </div></div>
       <div class="box box2"><div>
-        <a id="btn-line-width">Size <i class="fa fa-pencil"
+        <a id="btn-line-width">Size <i class="fa fa-paint-brush"
               aria-hidden="true"></i><br/><input type="number" min="1" class="line-width" value="2" onclick="this.select()"></a>
       </div></div>
       <div class="box box3"><div>
@@ -53,10 +53,10 @@
     </div>
 
     <div class="lower-buttons">
-      <a class="btn-download"><button type="button" class="btn btn-primary"><i class="fa fa-download" aria-hidden="true"></i> Save</button></a>
-      <a id="btn-print" onclick="print()"><button type="button" class="btn btn-print"><i class="fa fa-print" aria-hidden="true"></i> Print</button></a>
+      <a class="btn-download"><button type="button" class="btn btn-desktop btn-primary"><i class="fa fa-download" aria-hidden="true"></i> Save</button></a>
+      <a id="btn-print" onclick="print()"><button type="button" class="btn btn-desktop btn-print"><i class="fa fa-print" aria-hidden="true"></i> Print</button></a>
       <hr>
-      <a class="btn-clear"><button type="button" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Clear</button></a>
+      <a class="btn-clear"><button type="button" class="btn btn-desktop btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Clear</button></a>
     </div>
 
   </div> <!-- END leftnav -->
