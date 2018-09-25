@@ -52,10 +52,10 @@ $(".do-reflect").change(function() {
       settings.doReflect.set(true);
     }
   else {
-    // Silly hack to fix a bug quickly. I pass an empty string instead of
-    // the boolean value false, because localStorage converts everything into
-    // string, which means it reads 'false' as a non-empty string,
-    // which absurdly makes its boolean value TRUE (badness ensues).
+    // This is a hack, meant to fix a bug quickly. I pass an empty string
+    // instead of the boolean value false, because localStorage converts
+    // everything into string, which means it reads 'false' as a non-empty
+    // string, which absurdly makes its boolean value TRUE (badness ensues).
       settings.doReflect.set('');
   }
 });
@@ -120,7 +120,7 @@ function init() {
 
 
   // Drow bg grid
-  drawBoard();
+  // drawBoard();
 
 
   // Handle mouse/touch events
@@ -377,7 +377,7 @@ function clear() {
       // (once undo function is written).
       ctx.clearRect(0, 0, w, h);
       paintWhite();
-      drawBoard();
+      // drawBoard();
     }
 }
 
