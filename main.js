@@ -73,15 +73,15 @@ ctx.fill();
 
 // Draw background grid
 
-function drawBoard(){
-  ctx.moveTo(w/2,0);
-  ctx.lineTo(w/2,h);
-  ctx.moveTo(0,h/2);
-  ctx.lineTo(w,h/2);
-  ctx.lineWidth = 1; // So line doesn't change to user settings
-  ctx.strokeStyle = "#f5f5f5";
-  ctx.stroke();
-}
+// function drawBoard(){
+//   ctx.moveTo(w/2,0);
+//   ctx.lineTo(w/2,h);
+//   ctx.moveTo(0,h/2);
+//   ctx.lineTo(w,h/2);
+//   ctx.lineWidth = 1; // So line doesn't change to user settings
+//   ctx.strokeStyle = "#f5f5f5";
+//   ctx.stroke();
+// }
 
 
 function init() {
