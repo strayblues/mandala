@@ -29,21 +29,22 @@
   <script src="https://use.fontawesome.com/8f61b97be3.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script async src="https://static.addtoany.com/menu/page.js"></script>
+  <!-- Load Facebook SDK for JavaScript -->
   <div id="fb-root"></div>
-  <script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2';
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
+  <script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
 </head>
 <body>
 
 <div id="desktop">
-
   <div class="sidenav leftnav">
-
     <div class="grid2x2 top-buttons">
       <div class="box box1"><div>
         <a id="btn-color-desk">Color <br/><input type='text' class="selectionPalette" /></a>
@@ -58,15 +59,13 @@
         <a id="btn-flip-switch">Mirror <br><input type="checkbox" class="do-reflect" checked="true"></a>
       </div></div>
     </div>
-
     <div class="lower-buttons">
       <a class="btn-download"><button type="button" class="btn btn-desktop btn-primary"><i class="fa fa-download" aria-hidden="true"></i> Save</button></a>
       <a id="btn-print" onclick="print()"><button type="button" class="btn btn-desktop btn-print"><i class="fa fa-print" aria-hidden="true"></i> Print</button></a>
       <hr>
       <a class="btn-clear"><button type="button" class="btn btn-desktop btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Clear</button></a>
     </div>
-
-  </div> <!-- END leftnav -->
+  </div> <!-- /.leftnav -->
 
   <div id="main">
     <canvas id="desktop-canvas" width="600" height="600">
@@ -91,22 +90,19 @@
                 charset="utf-8">
         </script>
       </div>
-      <!-- LightWidget WIDGET -->
+      <!-- LightWidget Insta WIDGET -->
       <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/f4779fc523ba5491b78c0c9d806c12a0.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:70%;border:0;overflow:hidden;"></iframe>
-      <!-- <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/b78fba555a525b76b7be0eedc1f4b232.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:70%;border:0;overflow:hidden;"></iframe> -->
     </div>
 
-
-    <!-- Me buttons -->
+    <!-- Contact/Follow Buttons -->
     <div class="icon-holder">
       <a target="_blank" href="//il.linkedin.com/in/hagar-shilo-04651511b"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
       <a target="_blank" href="//github.com/strayblues"><i class="fa fa-github-alt fa-lg" aria-hidden="true"></i></a>
       <a target="_blank" href="mailto:strayblues@gmail.com"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a>
     </div>
+  </div><!-- /.rightnav -->
+</div><!-- /#desktop -->
 
-  </div>
-
-</div>
 <div id="mobile">
   <div class="wrapper">
     <canvas id="mobile-canvas">
