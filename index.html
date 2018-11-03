@@ -17,7 +17,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="author" content="Hagar Shilo">
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="theme.css">
   <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src='spectrum.js'></script>
@@ -29,6 +29,14 @@
   <script src="https://use.fontawesome.com/8f61b97be3.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script async src="https://static.addtoany.com/menu/page.js"></script>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
 </head>
 <body>
 
@@ -75,7 +83,7 @@
       </div>
 
       <div class="twitter-buttons">
-        <!-- <a class="twitter-share-button"></a> -->
+        <a class="twitter-share-button"></a>
         <a href="https://twitter.com/mandala_app"
             class="twitter-follow-button"
             data-show-count="false">Follow @mandala_app</a>
@@ -83,7 +91,11 @@
                 charset="utf-8">
         </script>
       </div>
+      <!-- LightWidget WIDGET -->
+      <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/f4779fc523ba5491b78c0c9d806c12a0.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:70%;border:0;overflow:hidden;"></iframe>
+      <!-- <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/b78fba555a525b76b7be0eedc1f4b232.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:70%;border:0;overflow:hidden;"></iframe> -->
     </div>
+
 
     <!-- Me buttons -->
     <div class="icon-holder">
@@ -117,15 +129,6 @@
     </div>
   </div> <!-- /.wrapper -->
 </div> <!-- /#mobile -->
-<!-- FB -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 
 </body>
 </html>
