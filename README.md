@@ -1,6 +1,6 @@
 # It's a mandala maker!
 
-![Mandala 1](http://mandala.hagarsh.com/md/gallery/4.png)
+![Mandala 1](http://blog.hagarsh.com/wp-content/uploads/2018/11/Screen-Shot-2018-11-19-at-21.33.06.png)
 
 This is a kaleidoscope-inspired drawing tool. It was built in Vanilla JavaScript with a touch of jQuery for event handling. LocalStorage is used for saving user settings. External libraries and tools included for the purpose of file saving and color picking.
 
