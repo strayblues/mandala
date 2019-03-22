@@ -17,7 +17,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="author" content="Hagar Shilo">
-  <link rel="stylesheet" type="text/css" href="theme.css">
+  <meta property="og:title" content="Mandala Maker" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="//mandala-app.com/" />
+  <meta property="og:site_name" content="A symmetrical drawing app" />
+  <meta property="og:description" content="Draw something!" />
+  <meta property="og:image" content="//media.24ways.org/2018/shilo/mandala-ui.png" />
+  <link rel="stylesheet" type="text/css" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src='spectrum.js'></script>
@@ -28,42 +34,35 @@
   <script src="canvas-to-blob.min.js"></script>
   <script src="https://use.fontawesome.com/8f61b97be3.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <script async src="https://static.addtoany.com/menu/page.js"></script>
-  <!-- Load Facebook SDK for JavaScript -->
-  <div id="fb-root"></div>
-  <script>
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  </script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <!-- <script async src="https://static.addtoany.com/menu/page.js"></script> -->
 </head>
 <body>
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
 
 <div id="desktop">
   <div class="sidenav leftnav">
     <div class="grid2x2 top-buttons">
       <div class="box box1"><div>
-        <a id="btn-color-desk">Color <br/><input type='text' class="selectionPalette" /></a>
+        <a id="btn-color-desk"><i class="fas fa-palette"></i> <input type='text' class="selectionPalette" /></a>
       </div></div>
       <div class="box box2"><div>
-        <a id="btn-line-width">Size <i class="fa fa-paint-brush" aria-hidden="true"></i><br/><input type="number" min="1" class="line-width" value="2" onclick="this.select()"></a>
+        <a id="btn-line-width"><i class="fas fa-brush"></i> <input type="number" min="1" class="line-width" value="2" onclick="this.select()"></a>
       </div></div>
       <div class="box box3"><div>
-        <a id="btn-num-rot">Lines <br/><input type="number" class="rotations-num" min="2" value="5" onclick="this.select()"><br/></a>
+        <a id="btn-num-rot"><i class="fas fa-bars"></i> <input type="number" class="rotations-num" min="2" value="5" onclick="this.select()"><br/></a>
       </div></div>
       <div class="box box4"><div>
-        <a id="btn-flip-switch">Mirror <br><input type="checkbox" class="do-reflect" checked="true"></a>
+        <a id="btn-flip-switch"><i class="far fa-clone"></i> <input type="checkbox" class="do-reflect" checked="true"></a>
       </div></div>
     </div>
     <div class="lower-buttons">
-      <a class="btn-download"><button type="button" class="btn btn-desktop btn-primary"><i class="fa fa-download" aria-hidden="true"></i> Save</button></a>
-      <a id="btn-print" onclick="print()"><button type="button" class="btn btn-desktop btn-print"><i class="fa fa-print" aria-hidden="true"></i> Print</button></a>
+      <a class="btn-download"><button type="button" class="btn btn-desktop btn-primary"><i class="fa fa-download" aria-hidden="true"></i></button></a>
+      <a id="btn-print" onclick="print()"><button type="button" class="btn btn-desktop btn-print"><i class="fa fa-print" aria-hidden="true"></i></button></a>
       <hr>
-      <a class="btn-clear"><button type="button" class="btn btn-desktop btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Clear</button></a>
+      <a class="btn-clear"><button type="button" class="btn btn-desktop btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button></a>
     </div>
   </div> <!-- /.leftnav -->
 
@@ -78,10 +77,12 @@
       <div class="fb-like"
             data-href="https://www.facebook.com/Mandala-1247769641955808/"
             data-width="70" data-layout="box_count" data-action="recommend"
-            data-size="small" data-show-faces="true" data-share="true">
+            data-size="small" data-show-faces="true" data-share="false">
       </div>
 
-      <div class="twitter-buttons">
+      <div class="fb-share-button" data-href="https://mandala-app.com" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmandala-app.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+
+      <!-- <div class="twitter-buttons">
         <a class="twitter-share-button"></a>
         <a href="https://twitter.com/mandala_app"
             class="twitter-follow-button"
@@ -89,7 +90,7 @@
         <script async src="//platform.twitter.com/widgets.js"
                 charset="utf-8">
         </script>
-      </div>
+      </div> -->
       <!-- LightWidget Insta WIDGET -->
       <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/f4779fc523ba5491b78c0c9d806c12a0.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:70%;border:0;overflow:hidden;"></iframe>
     </div>
@@ -111,15 +112,21 @@
 
     <div id="menu">
       <div class="buttons">
-        <a id="btn-color" class="color-picker"><button type="button" class="btn btn-mobile btn-default">Color: <span class="color-picker"><input type='text' class="selectionPalette" /></span></button></a>
-        <a id="set-line-width"><button type="button" class="btn btn-mobile btn-default">Size: <input type="number" min="1" class="line-width" value="1" onclick="this.select()"></button></a>
-        <a id="btn-num-rot"><button type="button" class="btn btn-mobile btn-default">Lines: <input type="number" class="rotations-num" min="0" value="6" onclick="this.select()"></button></a>
-        <a id="btn-flip-switch"><button type="button" class="btn btn-mobile btn-default">Mirror <input type="checkbox" class="do-reflect" checked="true"></button></a>
-        <a class="btn-download"><button type="button" class="btn btn-mobile btn-default">Save <i class="fa fa-download" aria-hidden="true"></i></button></a>
-        <a class="btn-clear"><button type="button" class="btn btn-mobile btn-warning">Clear <i class="fa fa-trash" aria-hidden="true"></i></button></a>
+        <div class="btn-row">
+            <a id="btn-color" class="color-picker"><button type="button" class="btn btn-mobile btn-default"><i class="fas fa-palette"></i> <span class="color-picker"><input type='text' class="selectionPalette" /></span></button></a>
+            <a id="set-line-width"><button type="button" class="btn btn-mobile btn-default"><i class="fas fa-brush"></i> <input type="number" min="1" class="line-width" value="1" onclick="this.select()"></button></a>
+        </div>
+        <div class="btn-row">
+            <a id="btn-num-rot"><button type="button" class="btn btn-mobile btn-default"><i class="fas fa-bars"></i> <input type="number" class="rotations-num" min="0" value="6" onclick="this.select()"></button></a>
+            <a id="btn-flip-switch"><button type="button" class="btn btn-mobile btn-default"><i class="fas fa-clone"></i> <input type="checkbox" class="do-reflect" checked="true"></button></a>
+        </div>
+        <div class="btn-row">
+            <a class="btn-download"><button type="button" class="btn btn-mobile btn-primary-mobile"> <i class="fa fa-download" aria-hidden="true"></i></button></a>
+            <a class="btn-clear"><button type="button" class="btn btn-mobile btn-danger-mobile"> <i class="fa fa-trash" aria-hidden="true"></i></button></a>
+        </div>
       </div>
       <div class="social">
-        <div class="fb-share-button" data-href="http://mandala.hagarsh.com" data-layout="button" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fmandala.hagarsh.com%2F&amp;src=sdkpreparse">Share</a></div>
+        <div class="fb-share-button" data-href="https://mandala-app.com" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmandala-app.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
         <div class="fb-like" data-href="https://www.facebook.com/Mandala-1247769641955808/" data-layout="button" data-action="like" data-show-faces="true" data-share="false"></div>
       </div>
     </div>

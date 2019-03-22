@@ -43,8 +43,8 @@ body, .sidenav, #main, html, #menu {
 
 .btn-desktop {
   box-shadow: 2px 2px 20px #666;
-  width: 8.5em;
-  margin-left: 1.1em;
+  width: 4.5em;
+  margin-left: 3.5rem;
   /* background-image: linear-gradient(45deg,#1da1f2,#196da0,#3b5998);
   background-color: #3b5998; */
   /* transition: 0.3s; */
@@ -64,7 +64,7 @@ body, .sidenav, #main, html, #menu {
   border-radius: 10px;
   margin-top: 3px;
   margin-bottom: 3px;
-  width: 32%;
+  width: 49%;
   border-width: 0.25px;
 }
 
@@ -95,6 +95,14 @@ body, .sidenav, #main, html, #menu {
 
 .btn-danger:hover {
   background: linear-gradient(90deg,#963b39,#e83a35,#751512);
+  background-color: #bc4340;
+}
+
+.btn-primary-mobile {
+  background-color: #5cb85c;
+}
+
+.btn-danger-mobile {
   background-color: #bc4340;
 }
 
@@ -165,6 +173,11 @@ body, .sidenav, #main, html, #menu {
 
 .twitter-buttons, .fb-like {
   text-align: center;
+}
+
+.fb_iframe_widget {
+  display: block !important;
+  margin-bottom: 10px;
 }
 
 .icon-holder {
