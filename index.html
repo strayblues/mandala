@@ -109,17 +109,47 @@
       <p>Your browser doesn't support canvas.</p>
     </canvas>
 
-    <div id="menu">
+    <div class="mobile-menu">
       <div class="buttons">
-        <div class="btn-row">
-            <a id="btn-color" class="color-picker"><button type="button" class="btn btn-mobile btn-default"><i class="fas fa-palette"></i> <span class="color-picker"><input type='text' class="selectionPalette" /></span></button></a>
-            <a id="set-line-width"><button type="button" class="btn btn-mobile btn-default"><i class="fas fa-brush"></i> <input type="number" min="1" class="line-width" value="1" onclick="this.select()"></button></a>
+        <div class="mobile-btn-row">
+            <a id="btn-color" class="color-picker">
+              <button type="button" class="btn btn-mobile btn-default">
+                <i class="fas fa-palette"></i> Color 
+                <span class="color-picker">
+                  <input type='text' class="selectionPalette" />
+                </span>
+              </button>
+            </a>
+            <a id="set-line-width">
+              <button type="button" class="btn btn-mobile btn-default">
+                <!-- <i class="fas fa-brush"></i> -->
+                <i class="fas fa-circle fa-xs"></i>
+                <i class="fas fa-circle fa-sm"></i>
+                <i class="fas fa-circle fa-lg"></i>
+                Brush width:
+                <input type="number" min="1" class="line-width" value="1" onclick="this.select()">
+              </button>
+            </a>
         </div>
-        <div class="btn-row">
-            <a id="btn-num-rot"><button type="button" class="btn btn-mobile btn-default"><i class="fas fa-bars"></i> <input type="number" class="rotations-num" min="0" value="6" onclick="this.select()"></button></a>
-            <a id="btn-flip-switch"><button type="button" class="btn btn-mobile btn-default"><i class="fas fa-clone"></i> <input type="checkbox" class="do-reflect" checked="true"></button></a>
+        <div class="mobile-btn-row">
+            <a id="btn-num-rot">
+              <button type="button" class="btn btn-mobile btn-default">
+                <i class="fas fa-align-justify"></i> How many lines?
+                <input type="number" class="rotations-num" min="0" value="6" onclick="this.select()">
+              </button>
+            </a>
+            <a id="btn-flip-switch">
+              <button type="button" class="btn btn-mobile btn-default">
+                <i class="fas fa-star-half-alt"></i>
+                <label class="switch">
+                  <input type="checkbox" class="do-reflect" checked="true">
+                  <span class="slider round"></span>
+                </label>
+                <i class="fas fa-star"></i>
+              </button>
+            </a>
         </div>
-        <div class="btn-row">
+        <div class="mobile-btn-row">
             <a class="btn-download"><button type="button" class="btn btn-mobile btn-primary-mobile"> <i class="fa fa-download" aria-hidden="true"></i></button></a>
             <a class="btn-clear"><button type="button" class="btn btn-mobile btn-danger-mobile"> <i class="fa fa-trash" aria-hidden="true"></i></button></a>
         </div>
@@ -127,7 +157,6 @@
       <div class="social">
         <div class="fb-share-button" data-href="https://mandala-app.com" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmandala-app.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
         <div class="fb-like" data-href="https://www.facebook.com/Mandala-1247769641955808/" data-layout="button" data-action="like" data-show-faces="true" data-share="false"></div>
-        <!-- Contact/Follow Buttons -->
         <div class="icon-holder icon-holder-mobile">
           <a target="_blank" href="https://www.linkedin.com/in/hagar-shilo-04651511b"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
           <a target="_blank" href="https://github.com/strayblues"><i class="fa fa-github-alt fa-lg" aria-hidden="true"></i></a>
