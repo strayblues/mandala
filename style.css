@@ -184,13 +184,24 @@ body, .sidenav, #main, html, #menu {
   position: absolute;
   bottom: 55px;
   transform: translateX(58%);
-
 }
+
+.icon-holder-mobile {
+  position: inherit;
+  bottom: 10px;
+  transform: none;
+}
+
 .icon-holder a {
   transition: 0.5s;
   color: #dd2581; // pink
   margin-left: 0.5rem;
   padding: 0.25rem;
+}
+
+.icon-holder-mobile a {
+  padding: 0 1rem;
+  color: #010101;
 }
 
 .line-width, .rotations-num, input[type=checkbox]{
@@ -306,4 +317,12 @@ input[type=checkbox] {
     left: 0;
     right: 0;
   }
+}
+
+.author > p {
+  color: gray;
+}
+
+.author > p > a {
+  color: #4864b4;
 }
