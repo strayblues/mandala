@@ -53,7 +53,7 @@ body, .sidenav, #main, html, .mobile-menu {
 
 #desktop-canvas {
   cursor: url('cursor-pencil.png'), cell;
-  box-shadow: 8px 8px 20px #888;
+  box-shadow: 1px 1px 6px #888;
 }
 
 #mobile-canvas {
@@ -130,18 +130,38 @@ body, .sidenav, #main, html, .mobile-menu {
 
 .sidenav {
   height: 100%;
-  width: 13rem;
   position: fixed;
   z-index: 1; /* Show social buttons */
   top: 0;
 }
 
 .leftnav {
-  left: 0;
-  padding-top: 0.5rem;
+  width: 10rem;
+}
+
+.lower-buttons {
+  margin-top: 10px;
+  bottom: 10px;
+  display: flex;
+  transform: translateX(-7%);
+}
+
+.btn-desktop.btn-primary,
+.btn-desktop.btn-print,
+.btn-desktop.btn-danger {
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  padding: 0;
+  margin: 0;
+}
+
+.btn-desktop > i {
+  text-align: center;
 }
 
 .rightnav {
+  width: 10rem;
   right: 0;
   padding-top: 2rem;
 }
@@ -151,9 +171,9 @@ body, .sidenav, #main, html, .mobile-menu {
 }
 
 .leftnav a {
-    padding: 0.5rem;
+    padding: 0.25rem 0.5rem;
     text-decoration: none;
-    font-size: 125%;
+    font-size: 120%;
     display: block;
     transition: 0.5s;
 }
@@ -183,23 +203,17 @@ body, .sidenav, #main, html, .mobile-menu {
   text-align: center;
 }
 
-.twitter-buttons {
-  margin-top: 0.5rem;
-}
-
-.twitter-buttons, .fb-like {
-  text-align: center;
-}
-
 .fb_iframe_widget {
   display: block !important;
   margin-bottom: 10px;
 }
 
 .icon-holder {
-  position: absolute;
-  bottom: 55px;
-  transform: translateX(58%);
+  transform: translateX(11%);
+  margin-top: 21px;
+  /* position: absolute; */
+  /* bottom: 55px; */
+  /* transform: translateX(58%); */
 }
 
 .icon-holder-mobile {
@@ -210,7 +224,7 @@ body, .sidenav, #main, html, .mobile-menu {
 
 .icon-holder a {
   transition: 0.5s;
-  color: #dd2581; /* pink */
+  color: #222;
   margin-left: 0.5rem;
   padding: 0.25rem;
 }
@@ -256,24 +270,8 @@ input[type=checkbox] {
   font-size: 100%;
 }
 
-.row-item {
-  width: 46%;
-  float: left;
-  display: inline-block;
-}
-
-.row-item-1 {
-  border-right: solid #c3c3c3 0.5rem;
-  border-left: solid #c3c3c3 0.25rem;
-}
-
 .grid2x2 {
   margin-left: 6px;
-  min-width: 90px;
-  min-height: 90px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
 }
 
 .grid2x2 > div {
@@ -285,27 +283,21 @@ input[type=checkbox] {
 .grid2x2 > div > div {
   display: flex;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .box {
-  width: 47%;
-  margin: 3px;
+  text-align: center;
+  margin: 10px;
   background-color: #ddd;
   border-radius: 3px;
-  box-shadow: 2px 2px 4px #666;
+  box-shadow: 1px 1px 10px #888;
   background-image: linear-gradient(45deg,#ccc,#fff,#bbb);
-  background-color: #5cb85c;
   transition: 0.2s ease-in-out;
 }
 
 .box:hover {
   transform: scale(1.1);
-}
-
-.lower-buttons {
-  position: absolute;
-  bottom: 15px;
 }
 
 @media print {
@@ -393,4 +385,9 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.fa-star.fa-lg,
+.fa-star-half-alt.fa-lg {
+  vertical-align: -10px;
 }
