@@ -8,7 +8,7 @@ body {
 }
 
 body, .sidenav, #main, html, .mobile-menu {
-  background-color: #c3c3c3; // light gray
+  background-color: #d3d3d3; /* light gray */
 }
 
 .btn {
@@ -24,12 +24,13 @@ body, .sidenav, #main, html, .mobile-menu {
 }
 
 .mobile-btn-row {
-  padding: 0 1rem;
+  padding: 0 0.75rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
-.mobile-btn-row > a {
+.mobile-btn-row.row1 > a,
+.mobile-btn-row.row2 > a {
   width: 49%;
 }
 
@@ -58,6 +59,7 @@ body, .sidenav, #main, html, .mobile-menu {
 #mobile-canvas {
   margin-top: 15px;
   margin-left: 15px;
+  box-shadow: 1px 1px 1px 0 #888;
 }
 
 .btn-desktop {
@@ -104,12 +106,20 @@ body, .sidenav, #main, html, .mobile-menu {
   background-color: #bc4340;
 }
 
+.mobile-btn-row > .btn-download > button,
+.mobile-btn-row > .btn-clear > button {
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+}
+
+
 .btn-primary-mobile {
-  background-color: #88a184; // green
+  background-color: #88a184;  /* green */
 }
 
 .btn-danger-mobile {
-  background-color: #a67676; // red
+  background-color: #a67676; /* red */
 }
 
 .social {
@@ -200,7 +210,7 @@ body, .sidenav, #main, html, .mobile-menu {
 
 .icon-holder a {
   transition: 0.5s;
-  color: #dd2581; // pink
+  color: #dd2581; /* pink */
   margin-left: 0.5rem;
   padding: 0.25rem;
 }
