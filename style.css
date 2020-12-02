@@ -37,11 +37,9 @@ body, .sidenav, #main, html, .mobile-menu {
 .btn-mobile {
   background-color: #bbb;
   border-color: #b1b1b1;
-  padding: 10px 2px;
+  padding: 2px;
   color: #444;
-  font-size: 13pt;
-  border-radius: 10px;
-  margin-top: 3px;
+  margin-top: 8px;
   margin-bottom: 3px;
   box-shadow: 1px 1px 1px 0 #aaa;
   height: 3rem;
@@ -385,6 +383,17 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.btn-mobile > .fas.fa-align-justify,
+.btn-mobile > .fas.fa-palette {
+  vertical-align: -4px;
+}
+
+.btn-mobile > .fas.fa-circle,
+.btn-mobile > .fas.fa-star-half-alt,
+.btn-mobile > .fas.fa-star {
+  vertical-align: -6px;
 }
 
 .fa-star.fa-lg,
