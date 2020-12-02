@@ -38,7 +38,7 @@ body, .sidenav, #main, html, .mobile-menu {
   background-color: #bbb;
   border-color: #b1b1b1;
   padding: 2px;
-  color: #444;
+  color: #666;
   margin-top: 8px;
   margin-bottom: 3px;
   box-shadow: 1px 1px 1px 0 #aaa;
@@ -114,10 +114,12 @@ body, .sidenav, #main, html, .mobile-menu {
 
 .btn-primary-mobile {
   background-color: #88a184;  /* green */
+  color: #333;
 }
 
 .btn-danger-mobile {
   background-color: #a67676; /* red */
+  color: #333;
 }
 
 .social {
@@ -180,10 +182,10 @@ body, .sidenav, #main, html, .mobile-menu {
 * Color of text buttons
 */
 .leftnav a {
-   color: #415caa;
+   color: #666;
  }
 .leftnav a:hover, .offcanvas a:focus {
-    color: #2b8eff;
+    color: #999;
 }
 
 .icon-holder a:hover {
@@ -329,7 +331,7 @@ input[type=checkbox] {
   position: relative;
   display: inline-block;
   width: 60px;
-  height: 34px;
+  height: 30px;
 }
 
 .switch input {
@@ -353,8 +355,8 @@ input[type=checkbox] {
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
+  height: 22px;
+  width: 22px;
   left: 4px;
   bottom: 4px;
   background-color: white;
@@ -371,32 +373,56 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  transform: translateX(30px);
 }
 
-/* Rounded sliders */
 .slider.round {
-  border-radius: 34px;
+  border-radius: 30px;
 }
 
 .slider.round:before {
   border-radius: 50%;
 }
 
-.btn-mobile > .fas.fa-align-justify,
-.btn-mobile > .fas.fa-palette {
+.btn-mobile > label > i.fas {
+  vertical-align: -2px;
+}
+
+.btn-mobile > label > .fas.fa-circle.fa-md {
+  vertical-align: -3px;
+}
+
+.btn-mobile > label > .fas.fa-circle.fa-lg {
+  vertical-align: -5px;
+}
+
+.btn-mobile > label > .fas.fa-align-justify,
+.btn-mobile > label > .fas.fa-palette {
   vertical-align: -4px;
 }
 
-.btn-mobile > .fas.fa-circle,
-.btn-mobile > .fas.fa-star-half-alt,
-.btn-mobile > .fas.fa-star {
-  vertical-align: -6px;
+.btn-mobile > label > .fas.fa-star-half-alt,
+.btn-mobile > label > .fas.fa-star {
+  vertical-align: -7px;
 }
 
-.fa-star.fa-lg,
-.fa-star-half-alt.fa-lg {
-  vertical-align: -10px;
+.fa-palette.fa-desktop-icon {
+  vertical-align: -23%;
+}
+
+.fa-circle.fa-desktop-icon.fa-md {
+  vertical-align: -8%;
+}
+
+.fa-circle.fa-desktop-icon.fa-lg {
+  vertical-align: -17%;
+}
+
+.fa-align-justify.fa-desktop-icon {
+  vertical-align: -20%;
+}
+
+.fa-star.fa-desktop-icon,
+.fa-star-half-alt.fa-desktop-icon {
+  vertical-align: -45%;
 }
