@@ -166,6 +166,10 @@ body, .sidenav, #main, html, .mobile-menu {
   padding-top: 2rem;
 }
 
+.rightnav > div {
+  text-align: center;
+}
+
 .fb-like a {
   text-decoration: none;
 }
@@ -199,7 +203,6 @@ body, .sidenav, #main, html, .mobile-menu {
 }
 
 .social-links {
-  margin-top: 0.5rem;
   text-align: center;
 }
 
@@ -209,11 +212,7 @@ body, .sidenav, #main, html, .mobile-menu {
 }
 
 .icon-holder {
-  transform: translateX(11%);
   margin-top: 21px;
-  /* position: absolute; */
-  /* bottom: 55px; */
-  /* transform: translateX(58%); */
 }
 
 .icon-holder-mobile {
@@ -225,12 +224,12 @@ body, .sidenav, #main, html, .mobile-menu {
 .icon-holder a {
   transition: 0.5s;
   color: #222;
-  margin-left: 0.5rem;
+  margin-left: 5px;
   padding: 0.25rem;
 }
 
 .icon-holder-mobile a {
-  padding: 0 1rem;
+  padding: 0 0.35rem;
   color: #010101;
 }
 
@@ -246,6 +245,20 @@ input {
 input[type=checkbox] {
   width: 18px;
   height: 18px;
+}
+
+input[type=image]{
+  margin-top: 3em;
+  margin-bottom: 2em;
+  box-shadow: 1px 1px 1px #888;
+  border-radius: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+  input[type=image] {
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
 }
 
 .line-width, .selectionPalette, .rotations-num {
