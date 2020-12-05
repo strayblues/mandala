@@ -409,4 +409,32 @@ function handleMouseMove(x, y) {
   }
 }
 
+/* Undo / Redo */
+
+$(document).on('keypress', function(e){
+  var zKey = 26;
+  if(e.ctrlKey && e.which === zKey){
+    alert("You pressed Undo");
+    history.undo(canvas, ctx);
+  }
+});
+
+$(document).on('keypress', function(e){
+  var yKey = 25;
+  if(e.ctrlKey && e.which === yKey){
+    alert("You pressed Redo");
+    history.redo(canvas, ctx);
+  }
+});
+
+$('#undo').click(function () {
+  alert("You clicked Undo");
+  history.undo(canvas, ctx);
+});
+
+$('#redo').click(function () {
+  alert("You clicked Redo");
+  history.redo(canvas, ctx);
+});
+
 });

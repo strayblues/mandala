@@ -143,7 +143,6 @@ body, .sidenav, #main, html, .mobile-menu {
   margin-top: 10px;
   bottom: 10px;
   display: flex;
-  transform: translateX(-7%);
 }
 
 .btn-desktop.btn-primary,
