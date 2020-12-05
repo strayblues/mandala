@@ -174,11 +174,11 @@ body, .sidenav, #main, html, .mobile-menu {
 }
 
 .leftnav a {
-    padding: 0.25rem 0.5rem;
-    text-decoration: none;
-    font-size: 120%;
-    display: block;
-    transition: 0.5s;
+  padding: 0.25rem 0.5rem;
+  text-decoration: none;
+  font-size: 120%;
+  display: block;
+  transition: 0.4s;
 }
 
 /**
@@ -237,8 +237,8 @@ body, .sidenav, #main, html, .mobile-menu {
 }
 
 input {
-    text-align: center;
-    font-size: 12pt;
+  text-align: center;
+  font-size: 12pt;
 }
 
 input[type=checkbox] {
@@ -282,10 +282,6 @@ input[type=image]{
   font-size: 100%;
 }
 
-.grid2x2 {
-  margin-left: 6px;
-}
-
 .grid2x2 > div {
   display: flex;
   justify-content: center;
@@ -298,18 +294,32 @@ input[type=image]{
   flex-direction: column;
 }
 
+.top-buttons {
+  margin-bottom: 1.75em;
+}
+
 .box {
   text-align: center;
   margin: 10px;
   background-color: #ddd;
   border-radius: 3px;
-  box-shadow: 1px 1px 10px #888;
+  box-shadow: 1px 1px 8px #666;
   background-image: linear-gradient(45deg,#ccc,#fff,#bbb);
   transition: 0.2s ease-in-out;
+  height: 3em;
 }
 
-.box:hover {
-  transform: scale(1.1);
+#undo {
+  transition: 0.1s ease-in-out;
+  padding: 12px;
+  color: #2196F3;
+  outline: none;
+}
+
+#undo:hover,
+#undo:active,
+#undo:focus {
+  box-shadow: 1px 1px 5px #666;
 }
 
 @media print {
