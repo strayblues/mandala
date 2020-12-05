@@ -19,7 +19,8 @@ var canvas, ctx, flag = false,
     currCoords = [0,0],
     dot_flag = false,
     w,
-    h;
+    h,
+    canvasHistory = [];
 
 
 // localStorage settings
@@ -64,10 +65,11 @@ $(".do-reflect").change(function() {
 // Pre-paint the canvas white - should be called on clear(); too
 
 function paintWhite(){
-ctx.beginPath();
-ctx.rect(0, 0, w, h);
-ctx.fillStyle = "white";
-ctx.fill();
+  ctx.beginPath();
+  ctx.rect(0, 0, w, h);
+  ctx.fillStyle = "white";
+  ctx.fill();
+  canvasHistory = [canvas.toDataURL()]; // clear undo/redo history
 }
 
 
@@ -411,51 +413,56 @@ function handleMouseMove(x, y) {
 
 /* Undo / Redo */
 
-var history = [],
-    layers = 0;
-
-function getCanvasState() {
-  var type = isMobile ? 'mobile' : 'desktop';
-  var currentCanvas = document.getElementById(type + '-canvas');
-  return currentCanvas.toDataURL();
-}
-
 $('canvas').on('mouseup mousout', function(){
-  var newCanvasState = getCanvasState();
+  var newCanvasState = canvas.toDataURL();
+  console.log(newCanvasState);
   if (newCanvasState !== null) {
-    history.push(newCanvasState);
-    layers = history.length;
+    canvasHistory.push(newCanvasState);
   }
 });
 
 $('canvas').on('touchend touchcancel', function (e) {
   e.preventDefault();
-  var newCanvasState = getCanvasState();
+  var newCanvasState = canvas.toDataURL();
   if (newCanvasState !== null) {
-    history.push(newCanvasState);
-    layers = history.length;
+    canvasHistory.push(newCanvasState);
   }
 });
 
 $('#undo').click(function () {
-  alert('History: ' + history);
-  alert('History length: ' + layers);
-  
-  // alert('Canvas code: ' + getCanvasState());
+  // alert('canvasHistory: ' + canvasHistory);
+  canvasHistory.pop();
+  updateDisplay();
+
+  // alert('Canvas code: ' + canvas.toDataURL());
   // alert("You clicked Undo");
-  // history.undo(canvas, ctx);
+  // canvasHistory.undo(canvas, ctx);
 });
+
+function updateDisplay() {
+  var img = new window.Image();
+  img.onload = function(){
+    ctx.drawImage(img ,0 ,0);
+  };
+  img.src = canvasHistory[canvasHistory.length-1];
+  console.log(canvasHistory[canvasHistory.length-1]);
+
+  // var img = new Element('img', {'src':canvasHistory[canvasHistory.length-1]});
+  // img.onload = function() {
+  //   ctx.clearRect(0, 0, w, h);
+  //   ctx.drawImage(img, 0, 0, w, h, 0, 0, w, h);
+  // }
+}
 
 $('#redo').click(function () {
   alert("You clicked Redo");
-  history.redo(canvas, ctx);
+  // canvasHistory.redo(canvas, ctx);
 });
 
 $(document).on('keypress', function(e){
   var zKey = 26;
   if(e.ctrlKey && e.which === zKey){
     alert("You pressed Undo");
-    history.undo(canvas, ctx);
   }
 });
 
@@ -463,7 +470,6 @@ $(document).on('keypress', function(e){
   var yKey = 25;
   if(e.ctrlKey && e.which === yKey){
     alert("You pressed Redo");
-    history.redo(canvas, ctx);
   }
 });
 
