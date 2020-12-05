@@ -38,7 +38,13 @@
 </head>
 <body>
   <div id="fb-root"></div>
-  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v9.0" nonce="GvY1fjC9"></script>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 
 <div id="desktop">
   <div class="sidenav leftnav">
@@ -72,8 +78,8 @@
           <i class="fas fa-star fa-desktop-icon fa-lg"></i>
         </a>
       </div>
-      <div class="box">
-        <a class="undo"><i class="fas fa-undo-alt fa-lg"></i></a>
+      <div class="box btn-undo">
+        <a><i class="fas fa-undo-alt fa-lg"></i></a>
         <!-- <a id="redo"><i class="fas fa-redo-alt fa-lg"></i> Redo</a> -->
       </div>
     </div>
@@ -94,17 +100,19 @@
     <!-- Social -->
     <div class="social-links">
       <div class="fb-like"
-          data-href="https://www.facebook.com/Mandala-1247769641955808"
-          data-width=""
-          data-layout="box_count"
-          data-action="like"
-          data-size="small"></div>
+        data-href="https://www.facebook.com/Mandala-1247769641955808"
+        data-width=""
+        data-layout="box_count"
+        data-action="like"
+        data-size="small"></div>
       <div class="fb-share-button"
-            data-href="https://mandala-app.com"
-            data-layout="button_count" data-size="small">
-        <a target="_blank"
-            href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmandala-app.com%2F&amp;src=sdkpreparse"
-            class="fb-xfbml-parse-ignore">Share</a>
+        data-href="https://mandala-app.com"
+        data-layout="box_count"
+        data-size="small">
+          <a target="_blank" 
+              href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmandala-app.com%2F&amp;src=sdkpreparse"
+              class="fb-xfbml-parse-ignore">Share
+          </a>
       </div>
     </div>
     <!-- Donate -->
@@ -175,17 +183,30 @@
             </a>
         </div>
         <div class="mobile-btn-row">
-          <a class="btn-clear"><button type="button" class="btn btn-mobile btn-danger-mobile"> <i class="fa fa-trash" aria-hidden="true"></i></button></a>
-          <a><button class="undo undo-mobile" class="btn btn-mobie btn-default"><i class="fas fa-undo-alt fa-lg"></i></button></a>
-          <a class="btn-download"><button type="button" class="btn btn-mobile btn-primary-mobile"> <i class="fa fa-download" aria-hidden="true"></i></button></a>
+          <a class="btn-clear">
+            <button type="button" class="btn btn-mobile btn-danger-mobile">
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </button>
+          </a>
+          <a class="btn-undo">
+            <button type="button" class="btn btn-mobile btn-undo-mobile">
+              <i class="fas fa-undo-alt" aria-hidden="true"></i>
+            </button>
+          </a>
+          <a class="btn-download">
+            <button type="button" class="btn btn-mobile btn-primary-mobile">
+              <i class="fa fa-download" aria-hidden="true"></i>
+            </button></a>
         </div>
         <div class="mobile-btn-row">
+          <!-- Social -->
           <div class="social">
-            <!-- Social -->
-            <!-- <div class="fb-like" data-href="https://www.facebook.com/Mandala-1247769641955808" data-width="80" data-layout="button_count" data-action="like" data-size="small"></div> -->
-            <!-- <div class="fb-share-button" data-href="https://mandala-app.com" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmandala-app.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div> -->
-
-            <!-- Donate -->
+            <div class="fb-like" data-href="https://www.facebook.com/Mandala-1247769641955808" data-width="80" data-layout="button_count" data-action="like" data-size="small"></div>
+            <div class="fb-share-button" data-href="https://mandala-app.com/" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmandala-app.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+          </div>
+        </div>
+          <!-- Donate -->
+          <div class="mobile-btn-row">
             <div>
               <form action="https://www.paypal.com/donate" method="post" target="_blank">
                 <input type="hidden" name="hosted_button_id" value="8QGVQ6EFCQCD4" />
@@ -193,8 +214,10 @@
                 <img src="https://www.paypal.com/en_IL/i/scr/pixel.gif" width="1" height="1" />
               </form>
             </div>
-
+          </div>
+        </div>
             <!-- Contact -->
+          <div class="mobile-btn-row">
             <div class="icon-holder icon-holder-mobile">
               <a target="_blank" href="https://www.linkedin.com/in/hagar-shilo-04651511b"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
               <a target="_blank" href="https://github.com/strayblues"><i class="fa fa-github-alt fa-lg" aria-hidden="true"></i></a>

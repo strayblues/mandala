@@ -15,7 +15,6 @@ body, .sidenav, #main, html, .mobile-menu {
   border: 0;
   border-radius: 4px;
   color: white;
-  padding: 12px 24px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -106,24 +105,29 @@ body, .sidenav, #main, html, .mobile-menu {
 }
 
 .mobile-btn-row > .btn-download > button,
-.mobile-btn-row > .btn-clear > button {
+.mobile-btn-row > .btn-clear > button,
+.mobile-btn-row > .btn-undo > button {
   border-radius: 50%;
   width: 3rem;
   height: 3rem;
+  color: #333;
 }
 
 
 .btn-primary-mobile {
   background-color: #88a184;  /* green */
-  color: #333;
 }
 
 .btn-danger-mobile {
   background-color: #a67676; /* red */
-  color: #333;
+}
+
+.btn-undo-mobile {
+  background-color: #bbb; /* gray */
 }
 
 .social {
+  display: flex;
   margin-right: -2px;
   margin-top: 1rem;
   text-align: center;
@@ -310,22 +314,19 @@ input[type=image]{
   height: 3em;
 }
 
-.undo {
+.btn-undo {
   transition: 0.1s ease-in-out;
-  padding: 12px;
-  color: #2196F3;
   outline: none;
 }
 
-.undo:hover,
-.undo:active,
-.undo:focus {
-  box-shadow: 1px 1px 5px #666;
+.btn-undo > a {
+  color: #2196F3;
 }
 
-.undo-mobile {
-  color: #666;
-  border-radius: 50%;
+.btn-undo:hover,
+.btn-undo:active,
+.btn-undo:focus {
+  box-shadow: 1px 1px 5px #666;
 }
 
 @media print {
