@@ -411,6 +411,13 @@ function handleMouseMove(x, y) {
 
 /* Undo / Redo */
 
+function getCurrentCanvas() {
+  var type = isMobile ? 'mobile' : 'desktop';
+  var currentCanvas = document.getElementById(type + '-canvas');
+  var dataURL = currentCanvas.toDataURL();
+  alert('Canvas code: ' + dataURL);
+}
+
 $(document).on('keypress', function(e){
   var zKey = 26;
   if(e.ctrlKey && e.which === zKey){
@@ -428,6 +435,7 @@ $(document).on('keypress', function(e){
 });
 
 $('#undo').click(function () {
+  getCurrentCanvas()
   alert("You clicked Undo");
   history.undo(canvas, ctx);
 });
