@@ -401,6 +401,7 @@ function handleMouseDown(x, y) {
 
 function stopDrawing() {
   flag = false;
+  canvasHistory.push(canvas.toDataURL()); // Update canvas undo/redo history
 }
 
 function handleMouseMove(x, y) {
@@ -413,31 +414,12 @@ function handleMouseMove(x, y) {
 
 /* Undo / Redo */
 
-$('canvas').on('mouseup mousout', function(){
-  var newCanvasState = canvas.toDataURL();
-  console.log(newCanvasState);
-  if (newCanvasState !== null) {
-    canvasHistory.push(newCanvasState);
+function undo() {
+  if (canvasHistory.length > 1) {
+    canvasHistory.pop();
+    updateDisplay();
   }
-});
-
-$('canvas').on('touchend touchcancel', function (e) {
-  e.preventDefault();
-  var newCanvasState = canvas.toDataURL();
-  if (newCanvasState !== null) {
-    canvasHistory.push(newCanvasState);
-  }
-});
-
-$('#undo').click(function () {
-  // alert('canvasHistory: ' + canvasHistory);
-  canvasHistory.pop();
-  updateDisplay();
-
-  // alert('Canvas code: ' + canvas.toDataURL());
-  // alert("You clicked Undo");
-  // canvasHistory.undo(canvas, ctx);
-});
+}
 
 function updateDisplay() {
   var img = new window.Image();
@@ -445,32 +427,24 @@ function updateDisplay() {
     ctx.drawImage(img ,0 ,0);
   };
   img.src = canvasHistory[canvasHistory.length-1];
-  console.log(canvasHistory[canvasHistory.length-1]);
-
-  // var img = new Element('img', {'src':canvasHistory[canvasHistory.length-1]});
-  // img.onload = function() {
-  //   ctx.clearRect(0, 0, w, h);
-  //   ctx.drawImage(img, 0, 0, w, h, 0, 0, w, h);
-  // }
 }
 
-$('#redo').click(function () {
-  alert("You clicked Redo");
-  // canvasHistory.redo(canvas, ctx);
-});
+$('#undo').click(undo);
 
 $(document).on('keypress', function(e){
   var zKey = 26;
   if(e.ctrlKey && e.which === zKey){
-    alert("You pressed Undo");
-  }
-});
+    undo()
+  }});
 
-$(document).on('keypress', function(e){
-  var yKey = 25;
-  if(e.ctrlKey && e.which === yKey){
-    alert("You pressed Redo");
-  }
-});
+// $('#redo').click(function () {
+//   alert("You clicked Redo");
+// });
+
+// $(document).on('keypress', function(e){
+//   var yKey = 25;
+//   if(e.ctrlKey && e.which === yKey){
+//     redo();
+//   }});
 
 });
