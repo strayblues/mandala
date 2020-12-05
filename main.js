@@ -411,12 +411,45 @@ function handleMouseMove(x, y) {
 
 /* Undo / Redo */
 
-function getCurrentCanvas() {
+var history = [],
+    layers = 0;
+
+function getCanvasState() {
   var type = isMobile ? 'mobile' : 'desktop';
   var currentCanvas = document.getElementById(type + '-canvas');
-  var dataURL = currentCanvas.toDataURL();
-  alert('Canvas code: ' + dataURL);
+  return currentCanvas.toDataURL();
 }
+
+$('canvas').on('mouseup mousout', function(){
+  var newCanvasState = getCanvasState();
+  if (newCanvasState !== null) {
+    history.push(newCanvasState);
+    layers = history.length;
+  }
+});
+
+$('canvas').on('touchend touchcancel', function (e) {
+  e.preventDefault();
+  var newCanvasState = getCanvasState();
+  if (newCanvasState !== null) {
+    history.push(newCanvasState);
+    layers = history.length;
+  }
+});
+
+$('#undo').click(function () {
+  alert('History: ' + history);
+  alert('History length: ' + layers);
+  
+  // alert('Canvas code: ' + getCanvasState());
+  // alert("You clicked Undo");
+  // history.undo(canvas, ctx);
+});
+
+$('#redo').click(function () {
+  alert("You clicked Redo");
+  history.redo(canvas, ctx);
+});
 
 $(document).on('keypress', function(e){
   var zKey = 26;
@@ -432,17 +465,6 @@ $(document).on('keypress', function(e){
     alert("You pressed Redo");
     history.redo(canvas, ctx);
   }
-});
-
-$('#undo').click(function () {
-  getCurrentCanvas()
-  alert("You clicked Undo");
-  history.undo(canvas, ctx);
-});
-
-$('#redo').click(function () {
-  alert("You clicked Redo");
-  history.redo(canvas, ctx);
 });
 
 });
