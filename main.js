@@ -431,7 +431,7 @@ function updateDisplay() {
   img.src = canvasHistory[canvasHistory.length-1];
 }
 
-$('#undo').click(undo);
+$('.undo').click(undo);
 
 $(document).on('keypress', function(e){
   var zKey = 26;

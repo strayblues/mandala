@@ -34,7 +34,8 @@ body, .sidenav, #main, html, .mobile-menu {
   width: 49%;
 }
 
-.btn-mobile {
+.btn-mobile,
+.undo-mobile {
   background-color: #bbb;
   border-color: #b1b1b1;
   padding: 2px;
@@ -309,17 +310,22 @@ input[type=image]{
   height: 3em;
 }
 
-#undo {
+.undo {
   transition: 0.1s ease-in-out;
   padding: 12px;
   color: #2196F3;
   outline: none;
 }
 
-#undo:hover,
-#undo:active,
-#undo:focus {
+.undo:hover,
+.undo:active,
+.undo:focus {
   box-shadow: 1px 1px 5px #666;
+}
+
+.undo-mobile {
+  color: #666;
+  border-radius: 50%;
 }
 
 @media print {
