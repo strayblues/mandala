@@ -400,8 +400,10 @@ function handleMouseDown(x, y) {
 }
 
 function stopDrawing() {
+  if (flag) {
+    canvasHistory.push(canvas.toDataURL()); // Update canvas undo/redo history
+  }
   flag = false;
-  canvasHistory.push(canvas.toDataURL()); // Update canvas undo/redo history
 }
 
 function handleMouseMove(x, y) {
