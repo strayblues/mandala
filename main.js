@@ -20,7 +20,8 @@ var canvas, ctx, flag = false,
     dot_flag = false,
     w,
     h,
-    canvasHistory = [];
+    canvasHistory = [],
+    historyIndex = 0;
 
 
 // localStorage settings
@@ -70,6 +71,7 @@ function paintWhite(){
   ctx.fillStyle = "white";
   ctx.fill();
   canvasHistory = [canvas.toDataURL()]; // clear undo/redo history
+  historyIndex = 0;
 }
 
 
@@ -401,7 +403,10 @@ function handleMouseDown(x, y) {
 
 function stopDrawing() {
   if (flag) {
-    canvasHistory.push(canvas.toDataURL()); // Update canvas undo/redo history
+    // Update canvas undo/redo history
+    canvasHistory = canvasHistory.slice(0, historyIndex+1);
+    canvasHistory.push(canvas.toDataURL());
+    historyIndex++;
   }
   flag = false;
 }
@@ -417,8 +422,15 @@ function handleMouseMove(x, y) {
 /* Undo / Redo */
 
 function undo() {
-  if (canvasHistory.length > 1) {
-    canvasHistory.pop();
+  if (historyIndex > 0) {
+    historyIndex--;
+    updateDisplay();
+  }
+}
+
+function redo() {
+  if(historyIndex < canvasHistory.length-1) {
+    historyIndex++;
     updateDisplay();
   }
 }
@@ -428,7 +440,7 @@ function updateDisplay() {
   img.onload = function(){
     ctx.drawImage(img ,0 ,0);
   };
-  img.src = canvasHistory[canvasHistory.length-1];
+  img.src = canvasHistory[historyIndex];
 }
 
 $('.btn-undo').click(undo);
@@ -439,14 +451,12 @@ $(document).on('keypress', function(e){
     undo()
   }});
 
-// $('#redo').click(function () {
-//   alert("You clicked Redo");
-// });
+$('.btn-redo').click(redo);
 
-// $(document).on('keypress', function(e){
-//   var yKey = 25;
-//   if(e.ctrlKey && e.which === yKey){
-//     redo();
-//   }});
+$(document).on('keypress', function(e){
+  var yKey = 25;
+  if(e.ctrlKey && e.which === yKey){
+    redo();
+  }});
 
 });

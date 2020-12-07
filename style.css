@@ -42,7 +42,8 @@ button {
 }
 
 .btn-mobile,
-.btn-undo-mobile {
+.btn-undo-mobile,
+.btn-redo-mobile {
   background-color: #c5c5c5;
   border-color: #b1b1b1;
   padding: 2px;
@@ -114,7 +115,8 @@ button {
 
 .mobile-btn-row > .btn-download > button,
 .mobile-btn-row > .btn-clear > button,
-.mobile-btn-row > .btn-undo > button {
+.mobile-btn-row > .btn-undo > button,
+.mobile-btn-row > .btn-redo > button {
   border-radius: 50%;
   width: 3rem;
   height: 3rem;
@@ -318,18 +320,23 @@ input[type=image]{
   height: 3em;
 }
 
-.btn-undo-desktop {
+.btn-undo-desktop,
+.btn-redo-desktop {
   transition: 0.1s ease-in-out;
   outline: none;
 }
 
-.btn-undo-desktop > a {
+.btn-undo-desktop > a,
+.btn-redo-desktop > a {
   color: #2196F3;
 }
 
 .btn-undo-desktop:hover,
 .btn-undo-desktop:active,
-.btn-undo-desktop:focus {
+.btn-undo-desktop:focus,
+.btn-redo-desktop:hover,
+.btn-redo-desktop:active,
+.btn-redo-desktop:focus {
   box-shadow: 1px 1px 5px #666;
 }
 
