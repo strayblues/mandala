@@ -14,6 +14,7 @@ body, #main, html, .mobile-menu {
 h1 {
   color: #888;
   margin-left: 4px;
+  font-size: 115%;
 }
 
 h4 {
@@ -21,8 +22,8 @@ h4 {
 }
 
 h5 {
-  margin-left: 180px;
-  margin-top: -24px
+  margin-left: 32px;
+  margin-top: -10px
 }
 
 content, header {
@@ -175,7 +176,7 @@ button {
   height: 100%;
   position: fixed;
   z-index: 1; /* Show social buttons */
-  top: 5.5em;
+  top: 0.5em;
 }
 
 .leftnav {
